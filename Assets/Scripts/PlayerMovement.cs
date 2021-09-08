@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = true;
     private bool onWall = false;
-    private bool onStickyWall = false;
+    //private bool onStickyWall = false;
     private float lastTimeGrounded;
     private int jumpCounter;
     private bool jumping = false;

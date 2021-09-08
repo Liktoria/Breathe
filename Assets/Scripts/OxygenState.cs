@@ -6,6 +6,7 @@ public class OxygenState : MonoBehaviour
 {
     [SerializeField] private float timeBetweenOxygenReductions;
     [SerializeField] private float reductionAmount;
+    [SerializeField] private float collectibleOxygenAmount;
     private float oxygen;
     [SerializeField] ProgressBar oxygenBar;
 
@@ -15,12 +16,6 @@ public class OxygenState : MonoBehaviour
         oxygen = 100.0f;
         oxygenBar.BarValue = oxygen;
         InvokeRepeating("reduceOxygen", 0.0f, timeBetweenOxygenReductions);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void reduceOxygen()
@@ -52,5 +47,14 @@ public class OxygenState : MonoBehaviour
             Debug.Log("You lost");
         }
         oxygenBar.BarValue = oxygen;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Oxygen")
+        {
+            updateOxygen(collectibleOxygenAmount);
+            Destroy(collision.gameObject);
+        }
     }
 }
