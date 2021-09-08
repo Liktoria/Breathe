@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Physics2D.gravity = new Vector2(0, -5f);
     }
 
     // Update is called once per frame
@@ -68,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         AdjustFalling();
 
-        checkIfGrounded();
         //checkOnWall();
     }
 
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         //left and right -> x-axis
         float x = Input.GetAxisRaw("Horizontal");
         float moveBy = x * movementSpeed;
-        if (!onWall || (onWall && isGrounded))
+        if (!onWall || (onWall && IsGrounded()))
         {
             if (!jumping)
             {
@@ -113,14 +113,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (onStickyWall || isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor || jumpCounter > 0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumping = true;
-            //audioSource.PlayOneShot(jumpingSound, 0.5f);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            //animator.Play("Jump");
-            jumpCounter--;
+            checkIfGrounded();
+            if (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor || jumpCounter > 0)
+            {
+                jumping = true;
+                //audioSource.PlayOneShot(jumpingSound, 0.5f);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                //animator.Play("Jump");
+                jumpCounter--;
+            }
         }
+    }
+    private bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+
+        Debug.DrawRay(position, direction, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void checkIfGrounded()
@@ -185,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
-            if (!isFalling && !isGrounded)
+            if (!isFalling && !IsGrounded())
             {
                 //audioSource.PlayOneShot(fallingSound, 0.5f);
                 //animator.Play("Midair");
@@ -200,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator WaitAnimationOverAndDoThings()
     {
-        yield return new WaitForSeconds(0.5f); //animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.5f
+        yield return new WaitForSeconds(1.5f); //animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.5f
         jumping = false;
     }
 
