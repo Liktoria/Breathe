@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
-    public void CreditsScene()
+    public void LoadNextScene(string scenename)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Credits");
     }
 }
