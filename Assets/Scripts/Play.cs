@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Play : MonoBehaviour
-{
+    {
     public void LoadNextScene(string scenename)
     {
         SceneManager.LoadScene("MainScene");
