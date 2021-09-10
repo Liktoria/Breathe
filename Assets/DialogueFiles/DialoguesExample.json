@@ -1,281 +1,337 @@
 {
     "dialogues": [
         {
-            "name": "Blue",
+            "name": "Opening Scene",
             "lines": [
                 {
-                    "name": "Blue",
-                    "text": "I am so happy that you woke up!",
+                    "name": "Commander Ives",
+                    "text": "He may be your older brother, but you have a job to do.",
                     "side": 2
                 },
                 {
-                    "name": "Blue",
-                    "text": "The other all left while you were sleeping... I tried to stop them, but the wait rendered them restless.",
+                    "name": "Roanoke Taylor",
+                    "text": "Richmond's not my older brother. Parents never said who was the oldest twin. So-",
                     "side": 2
                 },
                 {
-                    "name": "Blue",
-                    "text": "I chose to stay, because I knew that on the day you would wake up, you would be confused about the path ahead.",
+                    "name": "Commander Ives",
+                    "text": "Don't give me shit Taylor. I'm leveling with you. Might not be anything left of A.E.R.O. Genesis Crew. But none of us survive if you don't come back with that plant.",
                     "side": 2
                 },
                 {
-                    "name": "Blue",
-                    "text": "Only once you reach the beginning, will you reach the end.",
+                    "name": "Roanoke Taylor",
+                    "text": "I know! I get it. I'm worried. Hell, I'm scared...You know, I love red velvet cupcakes. Least you could do, considering I'm saving the world.",
                     "side": 2
                 },
                 {
-                    "name": "Blue",
-                    "text": "I didn't go really far, unlike the others, but this place. It feels familiar.",
+                    "name": "Commander Ives",
+                    "text": "(sigh) The ARK's depending on you. Don't die on me Taylor.",
                     "side": 2
                 },
                 {
-                    "name": "Blue",
-                    "text": "Please be careful on the way!",
+                    "name": "Roanoke Taylor",
+                    "text": "Copy that sir. Hadn't planned on it.",
                     "side": 2
-                },
+                }
+
+            ]
+        },
+        {
+            "name": "Mission Log 1",
+            "lines": [
                 {
-                    "name": "Blue",
-                    "text": "I hope that finding them will allow you to find yourself...",
-                    "side": 2
-                },
-                {
-                    "name": "Blue",
-                    "text": "Remember, there are no wrong paths ahead.",
+                    "name": "Richmond Taylor - Mission Log 1/10",
+                    "text": "Ceres’ atmosphere. Only a few clicks on the chemistry dial from breathable. Somethin' tells me A.E.R.O. already knew that… ",
                     "side": 2
                 }
             ]
         },
         {
-            "name": "Red",
+            "name": "Mission Log 2",
             "lines": [
                 {
-                    "name": "Red",
-                    "text": "This is weird, I feel like there should be a bird here.",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "This is the perfect spot for a nest.",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "Why arent there any critters.",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "There's plenty of food...",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "What do you think?",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "Do you think that it's because of us?",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "We're not complete, so it upsets the world?",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "I don't know.",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "Not knowing... That's the scariest...",
-                    "side": 2
-                },
-                {
-                    "name": "Red",
-                    "text": "Don't you feel terrified, not knowing where you're from, or where you're going?",
+                    "name": "Richmond Taylor - Mission Log 2/10",
+                    "text": "The Fireglass Orchid, the ARK's blessed lord and oxygen savior. If the scientist are right, it's a band-aid on a bullet hole keeping the ARK afloat.",
                     "side": 2
                 }
             ]
         },
         {
-            "name": "Yellow",
+            "name": "Mission Log 3",
             "lines": [
                 {
-                    "name": "Yellow",
-                    "text": "Ah, finally woke up have you?",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "Did you come to get me last because you knew I was your savior?",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "Of course, of course you did.",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "After all, without me your are nothing.",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "Say, did the others forgive you?",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "I am not going to forgive you.",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "You need to live with your sin.",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "You don't deserve forgivness for casting us away, like some base critters.",
-                    "side": 2
-                },
-                {
-                    "name": "Yellow",
-                    "text": "I don't believe that you forgot your wrongdoings.",
+                    "name": "Richmond Taylor - Mission Log 3/10",
+                    "text": "Ceres in one word - resilient. A.E.R.O. thinks the orchid formed out of planetary distress. She’s trying to heal.",
                     "side": 2
                 }
             ]
         },
         {
-            "name": "Purple1",
+            "name": "Mission Log 4",
             "lines": [
                 {
-                    "name": "Purple",
-                    "text": "Well I'm glad that this is over!",
-                    "side": 2
-                },
-                {
-                    "name": "Purple",
-                    "text": "Yellow really likes to hear it's own voice...",
-                    "side": 2
-                },
-                {
-                    "name": "Purple",
-                    "text": "Say, do you also hate me like all the others?",
-                    "side": 2
-                },
-                {
-                    "name": "Purple",
-                    "text": "I really wish you didn't... I just couldn't take it anymore.",
+                    "name": "Richmond Taylor - Mission Log 4/10",
+                    "text": "ARK’s O2 is only as good as fresh shit on a Sunday. But the air pockets on Ceres (whistle) like it's 'posed to have fresh air.",
                     "side": 2
                 }
             ]
         },
         {
-            "name": "Green",
+            "name": "Mission Log 5",
             "lines": [
                 {
-                    "name": "Green",
-                    "text": "You. How long did you plan on making us wait? ",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "First, you bring us away from home, and then when things get hard, not only do you let the idiot take control, but also fall asleep for eons.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "WE WERE WAITING.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "First, you force us out of our homes.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "Then, you let a mortal control your actions.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "And when the time comes to finally regain freedom, you decide you want to go home.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "Even if you knew that it meant losing everything.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "You even unleashed your power.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "Did you ever stop to think about us?",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "We never wanted this. We simply followed you.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "And this idiot was the first one to leave us alone. After all he put us through.",
-                    "side": 2
-                },
-                {
-                    "name": "Green",
-                    "text": "Hmph. You'll end up doing whatever you want anyway won't you...",
+                    "name": "Richmond Taylor - Mission Log 5/10",
+                    "text": "Damn. Animals. Real animals. Got pissier than a cricket’s whisker when I plucked a flower. Miles came in handy. Animals. Actual animals.",
                     "side": 2
                 }
             ]
         },
         {
-            "name": "Purple2",
+            "name": "Mission Log 6",
             "lines": [
                 {
-                    "name": "Purple",
-                    "text": "Did you find everyone?",
+                    "name": "Richmond Taylor - Mission Log 6/10",
+                    "text": "Orchid’s only giving us a couple hundred years ‘fore we breathe it dry. The ARK’s a lifeboat. We need a home.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Mission Log 7",
+            "lines": [
+                {
+                    "name": "Richmond Taylor - Mission Log 7/10",
+                    "text": "Fireglass Orchid. Located. Ever since, things went haywire. Storm’s a brewing. Gettin’ here was easy. Leavin’ might be hard.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Mission Log 8",
+            "lines": [
+                {
+                    "name": "Richmond Taylor - Mission Log 8/10",
+                    "text": "Mission success means A.E.R.O. hits the bullseye on survival. Only thing - that target’s a couple hundred asteroids shy of living.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Mission Log 9",
+            "lines": [
+                {
+                    "name": "Richmond Taylor - Mission Log 9/10",
+                    "text": "Lesson numero uno aboard the ARK: Earth burned. Nobody says who lit the match, but I think Ceres rose from the ashes.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Mission Log 10",
+            "lines": [
+                {
+                    "name": "Richmond Taylor - Mission Log 10/10",
+                    "text": "I seen her - the orchid. Only would take a small bit to light up the ARK’s greenhouses. If we give it a chance, Ceres could be home again.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Roanoke Finds Richmond - V1 Richmond Lives - PT1",
+            "lines": [
+                {
+                    "name": "Richmond Taylor",
+                    "text": "(deep inhale) Like giving an ice bath to a glass a water.",
                     "side": 2
                 },
                 {
-                    "name": "Purple",
-                    "text": "With all these pieces, can you assemble the puzzle?",
+                    "name": "Roanoke Taylor",
+                    "text": "That good huh?",
                     "side": 2
                 },
                 {
-                    "name": "Purple",
-                    "text": "Do you hate me, like they all did?",
+                    "name": "Richmond Taylor",
+                    "text": "Orchid?",
                     "side": 2
                 },
                 {
-                    "name": "Purple",
-                    "text": "Or do you accept me, like you did before?",
+                    "name": "Roanoke Taylor",
+                    "text": "Came to you first, and good thing",
                     "side": 2
                 },
                 {
-                    "name": "Purple",
-                    "text": "I didn't expect you to sleep for so long, but it seems you needed the rest.",
+                    "name": "Richmond Taylor",
+                    "text": "Here. You always been the better shot.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Roanoke Finds Richmond - V1 Richmond Lives - PT2",
+            "lines": [
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "Even with a full tank, it may not be enough.",
                     "side": 2
                 },
                 {
-                    "name": "Purple",
-                    "text": "I hope you'll find it in yourself to forgive my sins.",
+                    "name": "Richmond Taylor",
+                    "text": "Orchid's givin' off pure O2, depletes slower. We gotta move, but it's possible.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Roanoke Finds Richmond - V2 Richmond Dies - PT1",
+            "lines": [
+                {
+                    "name": "Richmond Taylor",
+                    "text": "(strangled breath) It’s your mission.",
                     "side": 2
                 },
                 {
-                    "name": "Purple",
-                    "text": "After all, we were happy for a long time.",
+                    "name": "Roanoke Taylor",
+                    "text": "Don’t do that.",
+                    "side": 2
+                },
+                {
+                    "name": "Richmond Taylor",
+                    "text": "Take this. Damn it, Roanoke! Take it. (cough)",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Roanoke Finds Richmond - V2 Richmond Dies - PT2",
+            "lines": [
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "My O2 tank. There’s enough-",
+                    "side": 2
+                },
+                {
+                    "name": "Richmond Taylor",
+                    "text": "Ro, get to the orchid. It’s pure O2. Depletes slower. It’s enough to get you back.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "But-",
+                    "side": 2
+                },
+                {
+                    "name": "Richmond Taylor",
+                    "text": "Roanoke. (labored breathing)",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "We’ll never find out who’s older.",
+                    "side": 2
+                },
+                {
+                    "name": "Richmond Taylor",
+                    "text": "Love you little sis.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "Love you too. Big bro.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Final Scene - V1 Richmond Alive",
+            "lines": [
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "A.E.R.O. Agent Echo Six Lima. Reporting-",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "Ro?! Damn, it's good to hear your voice.",
+                    "side": 2
+                },
+                {
+                    "name": "Richmond Taylor",
+                    "text": "Me too sir?",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "Richmond? Glad you’re coming home.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "Plant’s secure. Orchid’s riding shotgun.",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "You're getting that red velvet.",
+                    "side": 2
+                },
+                {
+                    "name": "Richmond Taylor",
+                    "text": "My favorite.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "Let's debrief when we're back. We got questions.",
+                    "side": 2
+                }
+            ]
+        },
+        {
+            "name": "Final Scene - V2 Richmond Dead",
+            "lines": [
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "A.E.R.O. Agent Echo Six Lima. Reporting-",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "Ro?! Damn, it's good to hear your voice.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "Plant's secure.",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "Genesis Crew?",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylore",
+                    "text": "(sniffle) Negative.",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "Shit. Rich was a good one.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "The best.",
+                    "side": 2
+                },
+                {
+                    "name": "Commander Ives",
+                    "text": "I'm glad you're coming home Taylor.",
+                    "side": 2
+                },
+                {
+                    "name": "Roanoke Taylor",
+                    "text": "Let's debrief when I'm back. I got questions.",
                     "side": 2
                 }
             ]
