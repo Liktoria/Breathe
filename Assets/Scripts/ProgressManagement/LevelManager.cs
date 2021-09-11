@@ -40,13 +40,12 @@ public class LevelManager : MonoBehaviour
             unsavedMissionLogs[i].SetActive(true);
         }
         unsavedMissionLogs.Clear();
-        //update inventory UI
-        //place player at checkpoint position
+        //TODO: update inventory UI
         for (int j = 0; j < GameState.GetInstance().savedMissionLogs.Count; j++)
         {
             GameState.GetInstance().savedMissionLogs[j].SetActive(false);
         }
-
+        //place player at checkpoint position
         player.transform.position = GameState.GetInstance().checkpointPositions[GameState.GetInstance().lastCheckpoint];
     }
 
