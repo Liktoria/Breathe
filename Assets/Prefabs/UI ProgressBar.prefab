@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013998595, y: 0}
-  m_SizeDelta: {x: 171.76001, y: 19.580002}
+  m_SizeDelta: {x: 2085.018, y: 2084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222155969837783750
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04ea43f694cd2554fae2bb5f2e60c862, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56cf0d562ae3d4eaa9d576057c2b139a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -278,15 +278,15 @@ RectTransform:
   m_GameObject: {fileID: 1781825539191764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2.1124716, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224763426186284840}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.8}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1083, y: -184}
+  m_SizeDelta: {x: 2085.018, y: 2084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222721446874180078
 CanvasRenderer:
@@ -316,11 +316,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0289ed0d4a4e82e48afade52ae300992, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 0fc41491293684286b94136832fd5b0f, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 0
+  m_FillMethod: 1
   m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarColor: {r: 1, g: 1, b: 1, a: 1}
   BarBackGroundColor: {r: 1, g: 1, b: 1, a: 1}
-  BarBackGroundSprite: {fileID: 21300000, guid: 04ea43f694cd2554fae2bb5f2e60c862, type: 3}
+  BarBackGroundSprite: {fileID: 21300000, guid: 56cf0d562ae3d4eaa9d576057c2b139a, type: 3}
   Alert: 20
   BarAlertColor: {r: 0.9811321, g: 0, b: 0, a: 1}
   sound: {fileID: 0}
