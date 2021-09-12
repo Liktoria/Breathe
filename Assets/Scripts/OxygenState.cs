@@ -27,7 +27,7 @@ public class OxygenState : MonoBehaviour
         else
         {
             //You lost
-            Debug.Log("You lost");
+            //Debug.Log("You lost");
             oxygen = 0.0f;
         }
         oxygenBar.BarValue = oxygen;
