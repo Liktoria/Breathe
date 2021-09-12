@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Shooting : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !GameState.GetInstance().gamePaused) //&& !EventSystem.current.IsPointerOverGameObject()
         {
             Shoot();
         }

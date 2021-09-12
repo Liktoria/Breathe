@@ -65,10 +65,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        MoveCharacter();
-        Jump();
-        AdjustFalling();
-
+        if (!GameState.GetInstance().gamePaused)
+        {
+            MoveCharacter();
+            Jump();
+            AdjustFalling();
+        }
         //checkOnWall();
     }
 

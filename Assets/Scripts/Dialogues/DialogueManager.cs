@@ -4,10 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
-
 public class DialogueManager : MonoBehaviour
 {
-    private List<CameraController> subscribers = new List<CameraController>();
+    // Singleton
+    private static DialogueManager instance;
+
+    //private InteractionManager interactionManager;
+
+    //private List<Interactable> subscribers = new List<Interactable>();
+
+    public static DialogueManager GetInstance()
+    {
+        return instance;
+    }
 
     [SerializeField]
     private float timeBetweenCharacters = 0.1f;
@@ -25,8 +34,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private Sprite[] dialogueSprites;
     // All fields for controlling the UI
     [SerializeField]
     private GameObject dialogueBox;
@@ -34,35 +41,49 @@ public class DialogueManager : MonoBehaviour
     private TMP_Text content;
     private GameObject background;
     private GameObject continueArrow;
+    private Image leftPerson;
+    private Image rightPerson;
 
     // File with the Dialogues
     [SerializeField]
     private TextAsset jsonDialogues;
+    [SerializeField]
+    private Person[] persons;
 
     private Dialogue[] dialogues;
     public Dialogue currentDialogue;
     private int currentLine;
     private int currentSide;
-    private int currentBackgroundImage;
-    
 
+    private DialogueManager() { }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
         dialogueBox.SetActive(false);
         dialogues = JsonUtility.FromJson<Dialogues>(jsonDialogues.text).dialogues;
 
+
         speaker = dialogueBox.transform.Find("Name").GetComponent<TMP_Text>();
         content = dialogueBox.transform.Find("Content").GetComponent<TMP_Text>();
         background = dialogueBox.transform.Find("Background").gameObject;
         continueArrow = dialogueBox.transform.Find("ContinueArrow").gameObject;
+        leftPerson = dialogueBox.transform.Find("LeftPerson").gameObject.GetComponent<Image>();
+        rightPerson = dialogueBox.transform.Find("RightPerson").gameObject.GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (dialogueBox.activeSelf && !IsDoneShowingLine)
-        {            
+        {
             timer += Time.deltaTime;
             if (timer > timeBetweenCharacters)
             {
@@ -71,16 +92,9 @@ public class DialogueManager : MonoBehaviour
                 if (characterIndex < textToDisplay.Length + 1)
                 {
                     content.text = textToDisplay.Substring(0, characterIndex);
-                    /*if (!attachedCollectible.audioSource.isPlaying)
-                    {
-                        attachedCollectible.audioSource.Play();
-                    }*/
-                }
-                else
-                {
+                } else {
                     characterIndex = 0;
                     IsDoneShowingLine = true;
-                    //attachedCollectible.audioSource.Pause();
                 }
                 timer = 0.0f;
             }
@@ -102,33 +116,26 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
-        if (!IsDoneShowingLine)
+        if(!IsDoneShowingLine)
         {
             IsDoneShowingLine = true;
             characterIndex = 0;
             content.text = currentDialogue.lines[currentLine].text;
-            //attachedCollectible.audioSource.Pause();
         }
-        else if (dialogueBox.activeSelf)
+        else if(dialogueBox.activeSelf)
         {
             currentLine += 1;
-            if (currentDialogue.lines.Length > currentLine)
+            //AUDIO: play corresponding VO file
+            if(currentDialogue.lines.Length > currentLine)
             {
                 ChangeLine(currentDialogue.lines[currentLine]);
-            }
-            else
-            {
+            } else {
                 currentDialogue = null;
                 currentLine = 0;
                 dialogueBox.SetActive(false);
                 characterIndex = 0;
                 IsDoneShowingLine = true;
-                /*
-                if (!interactionManager.getInspectingSomething())
-                {
-                    interactionManager.setInteractableCollisions(true);
-                } */
-                NotifyAll();
+                //Dialogue ended
             }
         }
     }
@@ -138,34 +145,42 @@ public class DialogueManager : MonoBehaviour
         if (line.side == 0)
         {
             this.currentSide = this.currentSide == 1 ? 2 : 1;
-        }
-        else
+        } else
         {
             this.currentSide = line.side;
         }
         background.SetActive(true);
+        DisplayCharacterFor(line.name, side: this.currentSide);
         speaker.text = line.name;
         content.text = "";
 
         IsDoneShowingLine = false;
     }
 
-    
-    public void Subscribe(CameraController subscriber)
+    private void DisplayCharacterFor(string name, int side)
     {
-        subscribers.Add(subscriber);
-    }
-
-    public void Unsubscribe(CameraController subscriber)
-    {
-        subscribers.Remove(subscriber);
-    }
-
-    private void NotifyAll()
-    {
-        foreach (CameraController subscriber in subscribers)
+        Person[] filteredPersons = persons.Where(person => person.personName == name).ToArray();
+        if(filteredPersons.Length > 0) { 
+            ShowPerson(filteredPersons[0], side);
+        }
+        else
         {
-            subscriber.DialogueDone();
+            leftPerson.gameObject.SetActive(false);
+            rightPerson.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowPerson(Person person, int side)
+    {
+        leftPerson.gameObject.SetActive(side == 1);
+        rightPerson.gameObject.SetActive(side == 2);
+        if (side == 1)
+        {
+            leftPerson.sprite = person.personImage;
+
+        } else
+        {
+            rightPerson.sprite = person.personImage;
         }
     }
 }
