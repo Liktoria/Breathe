@@ -135,6 +135,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueBox.SetActive(false);
                 characterIndex = 0;
                 IsDoneShowingLine = true;
+                GameState.GetInstance().gamePaused = false;
                 //Dialogue ended
             }
         }

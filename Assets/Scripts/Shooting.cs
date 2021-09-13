@@ -2,25 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectileSpeed;
+    [SerializeField] private Sprite shootingSprite;
+    [SerializeField] private Vector3 shootingOffset;
     private GameObject instantiatedProjectile;
+    public bool isShooting = false;
+    private bool movingRight;
+    private float lastY;
+    private float lastShotTime = 0;
+    private SpriteRenderer characterRenderer;
+    private Vector3 shootingOffsetLeft;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterRenderer = this.GetComponent<SpriteRenderer>();
+        shootingOffsetLeft = new Vector3(-shootingOffset.x, shootingOffset.y, shootingOffset.z);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         if(Input.GetMouseButtonDown(0) && !GameState.GetInstance().gamePaused && !EventSystem.current.IsPointerOverGameObject()) //
         {
+            characterRenderer.sprite  = shootingSprite;
             Shoot();
+            isShooting = true;
+            lastShotTime = Time.time;
+        }
+        else if(isShooting && Time.time - lastShotTime > 0.5f)
+        {
+            isShooting = false;
         }
     }
 
@@ -33,11 +50,27 @@ public class Shooting : MonoBehaviour
         Vector2 shootingDirection =  localCursorPosition2D - playerPosition;
         float angle = Vector2.Angle(shootingDirection, transform.up);
 
-        instantiatedProjectile = GameObject.Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
+        if (shootingDirection.x <= 0)
+        {
+            characterRenderer.flipX = true;
+            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffsetLeft, Quaternion.Euler(0, 0, angle));
+        }
+        else
+        {
+            characterRenderer.flipX = false;
+            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, angle));
+        }
+
         Rigidbody2D rbProjectile = instantiatedProjectile.GetComponent<Rigidbody2D>();
         instantiatedProjectile.GetComponent<Projectile>().DegradeProjectile();
 
         rbProjectile.velocity = shootingDirection * projectileSpeed;
+        
     }
 
+    IEnumerator delaySpriteTransition(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        isShooting = false;
+    }
 }

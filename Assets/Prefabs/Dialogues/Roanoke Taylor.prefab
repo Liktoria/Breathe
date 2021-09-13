@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personName: Roanoke Taylor
-  personImage: {fileID: 21300000, guid: 19a0318c8558ebf4097661155c479a7a, type: 3}
+  personImage: {fileID: 21300000, guid: ee5baa4cd37a71b478623aa55c703452, type: 3}

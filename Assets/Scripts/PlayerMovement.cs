@@ -1,9 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //[SerializeField]
+    //private Animator animator;
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private Transform isGroundedChecker;
+    [SerializeField] private Transform wallChecker;
+    [SerializeField] private float groundRadius;
+    [SerializeField] private float wallRadius;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
+    //[SerializeField]
+    //private LayerMask stickyLayer;
+    [SerializeField] private float rememberGroundedFor;
+    [SerializeField] private float fallMultiplier = 2.5f;
+    [SerializeField] private float lowJumpMultiplier = 2f;
+    [SerializeField] private int defaultJumpCount = 1;
+    [SerializeField] private Sprite walkingSprite;
+    [SerializeField] private Sprite standingSprite;
+    [SerializeField] private CameraController cameraController;
+    [SerializeField] private AudioClip jumpingSound;
+    [SerializeField] private AudioClip walkingSound;
+    [SerializeField] private AudioClip fallingSound;
+    [SerializeField] private AudioClip impactSound;
+    //[SerializeField]
+    //private AudioSource audioSource;
+    private bool isFalling = false;
     private Rigidbody2D rb;
     private bool isGrounded = true;
     private bool onWall = false;
@@ -11,54 +38,15 @@ public class PlayerMovement : MonoBehaviour
     private float lastTimeGrounded;
     private int jumpCounter;
     private bool jumping = false;
-
-    //[SerializeField]
-    //private Animator animator;
-    [SerializeField]
-    private float movementSpeed;
-    [SerializeField]
-    private float jumpForce;
-    [SerializeField]
-    private Transform isGroundedChecker;
-    [SerializeField]
-    private Transform wallChecker;
-    [SerializeField]
-    private float groundRadius;
-    [SerializeField]
-    private float wallRadius;
-    [SerializeField]
-    private LayerMask groundLayer;
-    [SerializeField]
-    private LayerMask wallLayer;
-    //[SerializeField]
-    //private LayerMask stickyLayer;
-    [SerializeField]
-    private float rememberGroundedFor;
-    [SerializeField]
-    private float fallMultiplier = 2.5f;
-    [SerializeField]
-    private float lowJumpMultiplier = 2f;
-    [SerializeField]
-    private int defaultJumpCount = 1;
-    [SerializeField]
-    private CameraController cameraController;
-    [SerializeField]
-    private AudioClip jumpingSound;
-    [SerializeField]
-    private AudioClip walkingSound;
-    [SerializeField]
-    private AudioClip fallingSound;
-    [SerializeField]
-    private AudioClip impactSound;
-    //[SerializeField]
-    //private AudioSource audioSource;
-    private bool isFalling = false;
+    private SpriteRenderer characterRenderer;
+    private int walkingDirection = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Physics2D.gravity = new Vector2(0, -5f);
+        characterRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -81,11 +69,17 @@ public class PlayerMovement : MonoBehaviour
         float moveBy = x * movementSpeed;
         if (!onWall || (onWall && IsGrounded()))
         {
-            if (!jumping)
+            if (!GetComponent<Shooting>().isShooting)
             {
                 if (Input.GetAxis("Horizontal") > 0)
                 {
-                    //animator.Play("MoveBlobRight");
+                    if(characterRenderer.sprite != walkingSprite)
+                    {
+                        characterRenderer.sprite = walkingSprite;
+                    }                    
+                    characterRenderer.flipX = false;
+                    walkingDirection = 1;
+                    //AUDIO: play walking sound
                     /*if (!audioSource.clip != walkingSound)
                     {
                         audioSource.clip = walkingSound;
@@ -94,8 +88,13 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (Input.GetAxis("Horizontal") < 0)
                 {
+                    if (characterRenderer.sprite != walkingSprite)
+                    {
+                        characterRenderer.sprite = walkingSprite;
+                    }                    
+                    characterRenderer.flipX = true;
+                    walkingDirection = -1;
                     //audioSource.Pause();
-                    //animator.Play("MoveBlobLeft");
                     /*if (!audioSource.clip != walkingSound)
                     {
                         audioSource.clip = walkingSound;
@@ -104,6 +103,14 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    if(characterRenderer.sprite != standingSprite)
+                    {
+                        characterRenderer.sprite = standingSprite;
+                        if (walkingDirection < 0)
+                        {
+                            characterRenderer.flipX = true;
+                        }
+                    }                    
                     //animator.Play("IdleBlob");
                     //audioSource.Stop();
                     //audioSource.clip = null;
