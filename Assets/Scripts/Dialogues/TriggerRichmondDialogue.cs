@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerDialogue : MonoBehaviour
+public class TriggerRichmondDialogue : MonoBehaviour
 {
     [SerializeField] private string dialogueToTrigger;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject milesPopup;
     private bool savedRichmond;
     private bool dialogueTriggered;
 
@@ -21,10 +22,12 @@ public class TriggerDialogue : MonoBehaviour
         *if(enough oxygen)
         *{
         *   DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V1 Richmond Lives - PT1");
+        *   dialogueTriggered = true;
         *}
         *else
         *{
-        *   DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V2 Richmond Dies - PT1");        *   
+        *   DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V2 Richmond Dies - PT1");
+        *   dialogueTriggered = true;   
         *}
         *
         */
@@ -35,6 +38,12 @@ public class TriggerDialogue : MonoBehaviour
 
     private void DialogueEnded()
     {
+        if(dialogueTriggered)
+        {
+            milesPopup.SetActive(true);
+            dialogueTriggered = false;
+        }
+
         /*display Miles pop up
          * 
         *In Miles pop up:
