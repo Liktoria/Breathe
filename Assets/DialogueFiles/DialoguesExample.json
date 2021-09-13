@@ -246,7 +246,7 @@
             "lines": [
                 {
                     "name": "Roanoke Taylor",
-                    "text": "A.E.R.O. Agent Echo Six Lima. Reporting-",
+                    "text": "Agent Echo Six Lima. Reporting-",
                     "side": 1
                 },
                 {
@@ -266,7 +266,7 @@
                 },
                 {
                     "name": "Roanoke Taylor",
-                    "text": "Plant’s secure. Orchid’s riding shotgun.",
+                    "text": "Plant’s secure.",
                     "side": 1
                 },
                 {
@@ -291,7 +291,7 @@
             "lines": [
                 {
                     "name": "Roanoke Taylor",
-                    "text": "A.E.R.O. Agent Echo Six Lima. Reporting-",
+                    "text": "Agent Echo Six Lima-",
                     "side": 1
                 },
                 {
@@ -331,7 +331,7 @@
                 },
                 {
                     "name": "Roanoke Taylor",
-                    "text": "Let's debrief when I'm back. I got questions.",
+                    "text": "Let's debrief when I'm back.",
                     "side": 1
                 }
             ]
