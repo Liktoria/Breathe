@@ -6,7 +6,8 @@ public class GameState : MonoBehaviour
 {
     [System.NonSerialized] public int lastCheckpoint;
     [System.NonSerialized] public List<GameObject> savedMissionLogs = new List<GameObject>();
-    [System.NonSerialized] public bool gamePaused = false;
+    [System.NonSerialized] public bool gamePaused = false; //TODO: Reset to false
+    [System.NonSerialized] public bool hasMiles = true; //TODO: Reset to false
     public Vector3[] checkpointPositions;
     private static GameState Instance;
 

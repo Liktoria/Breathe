@@ -2574,7 +2574,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -4.0320625, y: 3.3071995}
@@ -2602,7 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2994c5faf8620843987330eb0bbb870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueToTrigger: Roanoke Finds "Richmond - V1 Richmond Lives - PT1"
+  dialogueToTrigger: Roanoke Finds Richmond - V1 Richmond Lives - PT1
 --- !u!224 &999537643 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}

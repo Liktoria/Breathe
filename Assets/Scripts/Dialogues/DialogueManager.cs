@@ -23,6 +23,9 @@ public class DialogueManager : MonoBehaviour
     private float timer = 0.0f;
     private int characterIndex = 0;
     private bool isDoneShowingLine = true;
+    public delegate void DialogueEndedAction();
+    public static event DialogueEndedAction OnDialogueEnded;
+
 
     private bool IsDoneShowingLine
     {
@@ -136,6 +139,7 @@ public class DialogueManager : MonoBehaviour
                 characterIndex = 0;
                 IsDoneShowingLine = true;
                 GameState.GetInstance().gamePaused = false;
+                OnDialogueEnded?.Invoke();
                 //Dialogue ended
             }
         }

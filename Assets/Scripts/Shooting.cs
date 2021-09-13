@@ -28,7 +28,8 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        if(Input.GetMouseButtonDown(0) && !GameState.GetInstance().gamePaused && !EventSystem.current.IsPointerOverGameObject()) //
+        if(GameState.GetInstance().hasMiles && Input.GetMouseButtonDown(0) 
+            && !GameState.GetInstance().gamePaused && !EventSystem.current.IsPointerOverGameObject())
         {
             characterRenderer.sprite  = shootingSprite;
             Shoot();
@@ -58,7 +59,7 @@ public class Shooting : MonoBehaviour
         else
         {
             characterRenderer.flipX = false;
-            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, angle));
+            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, -angle));
         }
 
         Rigidbody2D rbProjectile = instantiatedProjectile.GetComponent<Rigidbody2D>();
