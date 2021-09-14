@@ -7,6 +7,7 @@ public class OxygenState : MonoBehaviour
     [SerializeField] private float collectibleOxygenAmount;
     private float oxygen;
     [SerializeField] ProgressBar oxygenBar;
+    [SerializeField] OxygenStorage oxygenStorage;
     private bool oxygenLossPaused = true;
     [System.NonSerialized] public int extraOxygenContainers;
 
@@ -54,7 +55,8 @@ public class OxygenState : MonoBehaviour
         if(oxygen > 100.0f)
         {
             oxygen = 100.0f;
-            LevelManager.GetInstance().unsavedOxygenContainers++;
+            oxygenStorage.IncreaseNumber();
+
             //Change UI
             //TODO: AUDIO Add "gaining extra oxygen" sound if existing
         }

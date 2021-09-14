@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 8378075104895501411}
   - component: {fileID: 5431823819410671677}
   - component: {fileID: 5033414317162542947}
+  - component: {fileID: 94546201558889886}
   m_Layer: 5
   m_Name: OxygenStorage-2
   m_TagString: Untagged
@@ -230,6 +231,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &94546201558889886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075093416610694107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b9f565d0896234b9be36e40aa215cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberDisplayed: {fileID: 2702931480715670866}
 --- !u!1 &5389671383007931085
 GameObject:
   m_ObjectHideFlags: 0
