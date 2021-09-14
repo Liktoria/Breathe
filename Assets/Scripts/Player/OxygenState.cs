@@ -24,6 +24,11 @@ public class OxygenState : MonoBehaviour
             PauseOxygenLoss();
             oxygenLossPaused = true;
         }
+        else if(!GameState.GetInstance().gamePaused && oxygenLossPaused)
+        {
+            StartOxygenLoss();
+            oxygenLossPaused = false;
+        }
     }
 
     private void ReduceOxygen()
