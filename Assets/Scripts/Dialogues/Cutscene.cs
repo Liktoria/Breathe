@@ -9,11 +9,6 @@ public class Cutscene : MonoBehaviour
     {
         GameState.GetInstance().gamePaused = true;
         DialogueManager.GetInstance().StartDialogue("Opening Scene");
-    }
-
-    public void StartEndlevelDialogue(string chosenDialogue)
-    {
-        GameState.GetInstance().gamePaused = true;
-        DialogueManager.GetInstance().StartDialogue(chosenDialogue);
+        //TODO: AUDIO Start VO "Opening Scene"
     }
 }

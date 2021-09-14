@@ -28,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip walkingSound;
     [SerializeField] private AudioClip fallingSound;
     [SerializeField] private AudioClip impactSound;
-    //[SerializeField]
-    //private AudioSource audioSource;
     private bool isFalling = false;
     private Rigidbody2D rb;
     private bool isGrounded = true;
@@ -79,12 +77,7 @@ public class PlayerMovement : MonoBehaviour
                     }                    
                     characterRenderer.flipX = false;
                     walkingDirection = 1;
-                    //AUDIO: play walking sound
-                    /*if (!audioSource.clip != walkingSound)
-                    {
-                        audioSource.clip = walkingSound;
-                        audioSource.Play();
-                    }*/
+                    //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
                 }
                 else if (Input.GetAxis("Horizontal") < 0)
                 {
@@ -94,12 +87,7 @@ public class PlayerMovement : MonoBehaviour
                     }                    
                     characterRenderer.flipX = true;
                     walkingDirection = -1;
-                    //audioSource.Pause();
-                    /*if (!audioSource.clip != walkingSound)
-                    {
-                        audioSource.clip = walkingSound;
-                        audioSource.Play();
-                    }*/
+                    //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
                 }
                 else
                 {
@@ -110,10 +98,8 @@ public class PlayerMovement : MonoBehaviour
                         {
                             characterRenderer.flipX = true;
                         }
-                    }                    
-                    //animator.Play("IdleBlob");
-                    //audioSource.Stop();
-                    //audioSource.clip = null;
+                    }
+                    //TODO: AUDIO: stop walking sound (character is idling)
                 }
             }
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
@@ -128,9 +114,8 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor || jumpCounter > 0)
             {
                 jumping = true;
-                //audioSource.PlayOneShot(jumpingSound, 0.5f);
+                //TODO: AUDIO:Jumping sound
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                //animator.Play("Jump");
                 jumpCounter--;
             }
         }
@@ -159,10 +144,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isFalling)
             {
-                //impact
-                //audioSource.PlayOneShot(impactSound, 0.5f);
-                //animator.Play("Landing");
-                //StartCoroutine(WaitAnimationOverAndDoThings());
+                //TODO: AUDIO (OPTIONAL!!!) Impact sound after fall
                 isFalling = false;
             }
             isGrounded = true;
@@ -178,36 +160,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void checkOnWall()
-    {
-        Collider2D collider = Physics2D.OverlapCircle(wallChecker.position, wallRadius, wallLayer);
-
-        if (collider != null)
-        {
-            //Debug.Log("Wall!");
-            onWall = true;
-            jumpCounter = defaultJumpCount;
-        }
-        else
-        {
-            onWall = false;
-        }
-
-        /*Collider2D secondCollider = Physics2D.OverlapCircle(wallChecker.position, wallRadius, stickyLayer);
-
-        if (secondCollider != null)
-        {
-            Debug.Log("Irgh, sticky");
-            onStickyWall = true;
-            jumpCounter = defaultJumpCount;
-            isFalling = false;
-        }
-        else
-        {
-            onStickyWall = false;
-        }*/
-    }
-
     void AdjustFalling()
     {
         if (rb.velocity.y < 0)
@@ -215,8 +167,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
             if (!isFalling && !IsGrounded())
             {
-                //audioSource.PlayOneShot(fallingSound, 0.5f);
-                //animator.Play("Midair");
+                //TODO: AUDIO (OPTIONAL!!!) Sound for falling midair
                 isFalling = true;
             }
         }
@@ -225,11 +176,4 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
-
-    private IEnumerator WaitAnimationOverAndDoThings()
-    {
-        yield return new WaitForSeconds(1.5f); //animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.5f
-        jumping = false;
-    }
-
 }

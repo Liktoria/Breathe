@@ -61,7 +61,7 @@ public class Shooting : MonoBehaviour
             characterRenderer.flipX = false;
             instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, -angle));
         }
-
+        //TODO: AUDIO Shooting sound
         Rigidbody2D rbProjectile = instantiatedProjectile.GetComponent<Rigidbody2D>();
         instantiatedProjectile.GetComponent<Projectile>().DegradeProjectile();
 

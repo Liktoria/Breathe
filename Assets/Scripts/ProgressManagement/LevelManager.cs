@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private List<GameObject> unsavedMissionLogs = new List<GameObject>();
+    [System.NonSerialized] public int unsavedOxygenContainers;
     [System.NonSerialized] public int currentPlayerHealth;
     private static LevelManager Instance;
     [SerializeField] private GameObject player;
@@ -39,6 +40,8 @@ public class LevelManager : MonoBehaviour
         }
         unsavedMissionLogs.Clear();
         GameState.GetInstance().lastCheckpoint = checkPointIndex;
+        GameState.GetInstance().savedOxygenContainers += unsavedOxygenContainers;
+        unsavedOxygenContainers = 0;
     }
 
     public void LoadProgress()
@@ -59,6 +62,8 @@ public class LevelManager : MonoBehaviour
         oxygenBar.BarValue = 75;
         GameState.GetInstance().gamePaused = false;
         player.GetComponent<OxygenState>().StartOxygenLoss();
+        unsavedOxygenContainers = 0;
+        //Update OxygenContainerUI
     }
 
     public static LevelManager GetInstance()
