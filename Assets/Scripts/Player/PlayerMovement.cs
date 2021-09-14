@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
                     characterRenderer.flipX = false;
                     walkingDirection = 1;
                     //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
                 }
                 else if (Input.GetAxis("Horizontal") < 0)
                 {
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
                     characterRenderer.flipX = true;
                     walkingDirection = -1;
                     //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
                 }
                 else
                 {
@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 jumping = true;
                 //TODO: AUDIO:Jumping sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:VO/Roanoke Barks/Jump Emote", GetComponent<Transform>().position);
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpCounter--;
             }
@@ -147,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
             if (isFalling)
             {
                 //TODO: AUDIO (OPTIONAL!!!) Impact sound after fall
+                FMODUnity.RuntimeManager.PlayOneShot("event:VO/Roanoke Barks/Landing Emote", GetComponent<Transform>().position);
                 isFalling = false;
             }
             isGrounded = true;
