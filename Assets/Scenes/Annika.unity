@@ -8409,7 +8409,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 5.746198}
@@ -12056,6 +12056,7 @@ MonoBehaviour:
   fadeDuration: 1.5
   pauseMenu: {fileID: 766431517}
   inventory: {fileID: 570058715}
+  oxygenState: {fileID: 0}
 --- !u!1 &1673429908
 GameObject:
   m_ObjectHideFlags: 0
