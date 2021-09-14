@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
                     characterRenderer.flipX = false;
                     walkingDirection = 1;
                     //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
                 }
                 else if (Input.GetAxis("Horizontal") < 0)
                 {
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
                     characterRenderer.flipX = true;
                     walkingDirection = -1;
                     //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
                 }
                 else
                 {
