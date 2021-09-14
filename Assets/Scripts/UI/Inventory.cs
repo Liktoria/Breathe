@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
 
         foreach(Image missionLogImage in missionLogImages)
         {
-            missionLogImage.color = new Color(missionLogImage.color.r, missionLogImage.color.g, missionLogImage.color.b, 0.5f);
+            missionLogImage.color = new Color(missionLogImage.color.r, missionLogImage.color.g, missionLogImage.color.b, 0.2f);
         }
 
         for (int i = 0; i < collectedMissionLogs.Count; i++)
