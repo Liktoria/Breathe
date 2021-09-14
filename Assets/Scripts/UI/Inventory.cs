@@ -46,8 +46,8 @@ public class Inventory : MonoBehaviour
     {
         inventoryPrefab.SetActive(true);
 
-        miles.color = new Color(miles.color.r, miles.color.g, miles.color.b, 0.5f);
-        orchid.color = new Color(orchid.color.r, orchid.color.g, orchid.color.b, 0.5f);
+        miles.color = new Color(miles.color.r, miles.color.g, miles.color.b, 0.2f);
+        orchid.color = new Color(orchid.color.r, orchid.color.g, orchid.color.b, 0.2f);
 
         foreach (Button missionLogButton in missionLogButtons)
         {
@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour
         
         if(orchidActivated)
         {
-            orchid.color = new Color(orchid.color.r, orchid.color.g, orchid.color.b, 0.5f);
+            orchid.color = new Color(orchid.color.r, orchid.color.g, orchid.color.b, 1);
         }
     }
 

@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     {
         //add to inventory
         unsavedMissionLogs.Add(missionLog);
+        inventory.CollectedMissionLog(missionLog.GetComponent<MissionLog>().missionLogNumber);
         //display in inventory
     }
 
