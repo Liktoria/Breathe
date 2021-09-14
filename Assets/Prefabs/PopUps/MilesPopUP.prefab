@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 6284764863645766120}
   - component: {fileID: 2863686002267162716}
   - component: {fileID: 742524607485656279}
+  - component: {fileID: 1366774423480524877}
   m_Layer: 5
   m_Name: MilesPopUP
   m_TagString: Untagged
@@ -680,6 +681,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1366774423480524877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763721160925229241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1fa61a9c23013d49a9f2a7f6dbcc62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraController: {fileID: 0}
 --- !u!1 &8984494736579581151
 GameObject:
   m_ObjectHideFlags: 0

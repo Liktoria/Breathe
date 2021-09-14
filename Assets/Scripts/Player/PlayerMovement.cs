@@ -49,13 +49,17 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    {        
         if (!GameState.GetInstance().gamePaused)
         {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             MoveCharacter();
             Jump();
             AdjustFalling();
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         //checkOnWall();
     }

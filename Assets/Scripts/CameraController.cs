@@ -10,10 +10,16 @@ public class CameraController : MonoBehaviour
     private float duration = 1.5f;
     private Vector3 originalPosition;
     private Transform targetPosition;
+    private bool isLerping = false;
 
-	void Update()
+    private void Start()
+    {
+        targetPosition = transform;
+    }
+
+    void Update()
 	{
-		if (followTarget != null)
+		if (followTarget != null && !isLerping)
 		{
 			targetPos = new Vector3(followTarget.position.x, followTarget.position.y, transform.position.z);
 			Vector3 velocity = (targetPos - transform.position) * moveSpeed;
@@ -21,16 +27,12 @@ public class CameraController : MonoBehaviour
 		}
 	}
 
-	public void DialogueDone()
-    {
-
-    }
-
     IEnumerator MoveToDialogue()
     {
         float time = 0;
         Vector3 startPosition = transform.position;
         GameState.GetInstance().gamePaused = true;
+        isLerping = true;
 
         while (time < duration)
         {
@@ -54,12 +56,13 @@ public class CameraController : MonoBehaviour
             yield return null;
         }
         GameState.GetInstance().gamePaused = false;
+        isLerping = false;
     }
 
     public void DialogueTriggerReached(Transform goalPosition)
     {
         originalPosition = transform.position;
-        targetPosition.position = goalPosition.position;
+        targetPosition.position = new Vector3(goalPosition.position.x, goalPosition.position.y, -10);
         StartCoroutine(MoveToDialogue());
     }
 

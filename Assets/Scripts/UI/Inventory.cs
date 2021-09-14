@@ -46,8 +46,8 @@ public class Inventory : MonoBehaviour
     {
         inventoryPrefab.SetActive(true);
 
-        miles.color = new Color(miles.color.r, miles.color.g, miles.color.b, 0.2f);
-        orchid.color = new Color(orchid.color.r, orchid.color.g, orchid.color.b, 0.2f);
+        miles.color = new Color(miles.color.r, miles.color.g, miles.color.b, 0.4f);
+        orchid.color = new Color(orchid.color.r, orchid.color.g, orchid.color.b, 0.4f);
 
         foreach (Button missionLogButton in missionLogButtons)
         {
@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
 
         foreach(Image missionLogImage in missionLogImages)
         {
-            missionLogImage.color = new Color(missionLogImage.color.r, missionLogImage.color.g, missionLogImage.color.b, 0.2f);
+            missionLogImage.color = new Color(missionLogImage.color.r, missionLogImage.color.g, missionLogImage.color.b, 0.4f);
         }
 
         for (int i = 0; i < collectedMissionLogs.Count; i++)
