@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] ProgressBar oxygenBar;
     [SerializeField] private int totalPlayerHealth;
+    [SerializeField] private Inventory inventory;
 
     private void Awake()
     {
@@ -51,10 +52,20 @@ public class LevelManager : MonoBehaviour
             unsavedMissionLogs[i].SetActive(true);
         }
         unsavedMissionLogs.Clear();
-        //TODO: update inventory UI
+        inventory.InitInventory();
         for (int j = 0; j < GameState.GetInstance().savedMissionLogs.Count; j++)
         {
-            GameState.GetInstance().savedMissionLogs[j].SetActive(false);
+            GameObject missionLog = GameState.GetInstance().savedMissionLogs[j];
+            missionLog.SetActive(false);
+            inventory.CollectedMissionLog(missionLog.GetComponent<MissionLog>().missionLogNumber);
+        }
+        if(GameState.GetInstance().hasMiles)
+        {
+            inventory.AcquiredMiles();
+        }
+        if(GameState.GetInstance().gotOrchid)
+        {
+            inventory.AcquiredOrchid();
         }
         //place player at checkpoint position
         player.transform.position = GameState.GetInstance().checkpointPositions[GameState.GetInstance().lastCheckpoint];
