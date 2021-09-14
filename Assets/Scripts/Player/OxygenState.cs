@@ -24,6 +24,11 @@ public class OxygenState : MonoBehaviour
             PauseOxygenLoss();
             oxygenLossPaused = true;
         }
+        else if(!GameState.GetInstance().gamePaused && oxygenLossPaused)
+        {
+            StartOxygenLoss();
+            oxygenLossPaused = false;
+        }
     }
 
     private void ReduceOxygen()
@@ -61,7 +66,7 @@ public class OxygenState : MonoBehaviour
         if(collision.gameObject.tag == "Oxygen")
         {
             //TODO: AUDIO Add collecting oxygen bubble/filling up tank sound
-            FMODUnity.RuntimeManager.PlayOneShot("event:VO/Roanoke Barks/Oxygen Collection Emote", GetComponent<Transform>().position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Oxygen Collection Emote", GetComponent<Transform>().position);
             UpdateOxygen(collectibleOxygenAmount);
             Destroy(collision.gameObject);
         }

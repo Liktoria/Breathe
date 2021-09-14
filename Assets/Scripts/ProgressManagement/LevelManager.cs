@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
         currentPlayerHealth = totalPlayerHealth;
         oxygenBar.BarValue = 75;
         GameState.GetInstance().gamePaused = false;
-        player.GetComponent<OxygenState>().StartOxygenLoss();
+        //player.GetComponent<OxygenState>().StartOxygenLoss();
         unsavedOxygenContainers = 0;
         //Update OxygenContainerUI
     }

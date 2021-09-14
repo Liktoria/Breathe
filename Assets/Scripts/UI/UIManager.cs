@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private OxygenState oxygenState;
     private float alpha;
     private TMP_Text[] fadeTexts;
     private bool inventoryActive = false;
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
             {
                 inventory.CloseInventory();
                 inventoryActive = false;
+                //oxygenState.StartOxygenLoss();
                 //TODO: AUDIO UI pop up noise (if existing)
             }
             else if(!GameState.GetInstance().gamePaused && !inventoryActive)
