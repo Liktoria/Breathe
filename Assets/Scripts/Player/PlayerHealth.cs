@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy" && GameState.GetInstance().hasMiles)
         {
+            //TODO: AUDIO Got hit by enemy sound
             TakeHit();
         }
     }
@@ -39,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
             //die
             LevelManager.GetInstance().currentPlayerHealth = 0;
             GameState.GetInstance().gamePaused = true;
+            //TODO: AUDIO Suffocated to death
             if (currentDeathQuotes.Count <= 0)
             {
                 foreach (string quote in allDeathQuotes)
