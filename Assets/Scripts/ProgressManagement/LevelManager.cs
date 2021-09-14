@@ -5,8 +5,11 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private List<GameObject> unsavedMissionLogs = new List<GameObject>();
+    [System.NonSerialized] public int currentPlayerHealth;
     private static LevelManager Instance;
     [SerializeField] private GameObject player;
+    [SerializeField] ProgressBar oxygenBar;
+    [SerializeField] private int totalPlayerHealth;
 
     private void Awake()
     {
@@ -14,6 +17,11 @@ public class LevelManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {
+        currentPlayerHealth = totalPlayerHealth;
     }
 
     public void AddMissionLog(GameObject missionLog)
@@ -47,6 +55,10 @@ public class LevelManager : MonoBehaviour
         }
         //place player at checkpoint position
         player.transform.position = GameState.GetInstance().checkpointPositions[GameState.GetInstance().lastCheckpoint];
+        currentPlayerHealth = totalPlayerHealth;
+        oxygenBar.BarValue = 75;
+        GameState.GetInstance().gamePaused = false;
+        player.GetComponent<OxygenState>().StartOxygenLoss();
     }
 
     public static LevelManager GetInstance()
