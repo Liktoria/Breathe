@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OxygenState : MonoBehaviour
@@ -9,16 +7,25 @@ public class OxygenState : MonoBehaviour
     [SerializeField] private float collectibleOxygenAmount;
     private float oxygen;
     [SerializeField] ProgressBar oxygenBar;
+    private bool oxygenLossPaused = true;
 
     // Start is called before the first frame update
     void Start()
     {
         oxygen = 100.0f;
-        oxygenBar.BarValue = oxygen;
-        InvokeRepeating("reduceOxygen", 0.0f, timeBetweenOxygenReductions);
+        oxygenBar.BarValue = oxygen;        
     }
 
-    private void reduceOxygen()
+    private void Update()
+    {
+        if(GameState.GetInstance().gamePaused && !oxygenLossPaused)
+        {
+            PauseOxygenLoss();
+            oxygenLossPaused = true;
+        }
+    }
+
+    private void ReduceOxygen()
     {
         if(oxygen > 0.0f)
         {
@@ -33,7 +40,7 @@ public class OxygenState : MonoBehaviour
         oxygenBar.BarValue = oxygen;
     }
 
-    public void updateOxygen (float value)
+    public void UpdateOxygen (float value)
     {        
         oxygen += value;
         if(oxygen > 100.0f)
@@ -53,8 +60,19 @@ public class OxygenState : MonoBehaviour
     {
         if(collision.gameObject.tag == "Oxygen")
         {
-            updateOxygen(collectibleOxygenAmount);
+            UpdateOxygen(collectibleOxygenAmount);
             Destroy(collision.gameObject);
         }
+    }
+
+    public void StartOxygenLoss()
+    {
+        oxygenLossPaused = false;
+        InvokeRepeating("ReduceOxygen", 0.0f, timeBetweenOxygenReductions);
+    }
+
+    public void PauseOxygenLoss()
+    {
+        CancelInvoke("ReduceOxygen");
     }
 }
