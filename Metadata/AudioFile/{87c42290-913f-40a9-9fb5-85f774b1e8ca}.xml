@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{87c42290-913f-40a9-9fb5-85f774b1e8ca}">
+		<property name="assetPath">
+			<value>SFX/Player Character/Jump/WIG Breathe Jumps-004.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0016041666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{afddb9eb-d488-4ce6-8bdc-f6da8f6402af}</destination>
+		</relationship>
+	</object>
+</objects>

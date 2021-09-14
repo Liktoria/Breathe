@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{98d9ac03-36e6-4d85-8021-9f18e14a86f0}">
+		<property name="assetPath">
+			<value>SFX/Player Character/Footsteps/WIG Breathe Footsteps-006.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.89700000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{afddb9eb-d488-4ce6-8bdc-f6da8f6402af}</destination>
+		</relationship>
+	</object>
+</objects>
