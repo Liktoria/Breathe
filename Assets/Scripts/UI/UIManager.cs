@@ -39,6 +39,11 @@ public class UIManager : MonoBehaviour
         }      
     }
 
+    public void SetInventoryActive(bool newValue)
+    {
+        inventoryActive = newValue;
+    }
+
     public void ShowMenu(GameObject menuObject)
     {
         //Do some fading in action before enabling the menu

@@ -82,4 +82,12 @@ public class LevelManager : MonoBehaviour
     {
         return Instance;
     }
+
+    public void StartWayBack()
+    {
+        SaveProgress(5); //TODO: replace with accurate value
+        //TODO: make creatures aggressive -> change their path pattern and make them deal damage to the player
+        //TODO: change oxygen depleting speed
+        //TODO: make Richmond follow the player
+    }
 }

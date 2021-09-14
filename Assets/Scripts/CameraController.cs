@@ -40,8 +40,7 @@ public class CameraController : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = targetPosition.position;
+        //transform.position = targetPosition.position;
     }
 
     IEnumerator MoveToPlayer()
