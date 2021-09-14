@@ -10,10 +10,10 @@ public class UIManager : MonoBehaviour
     private GameObject menuParent;
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject inventory;
+    [SerializeField] private Inventory inventory;
     private float alpha;
     private TMP_Text[] fadeTexts;
-    private bool inventoryActive;
+    private bool inventoryActive = false;
 
     private void Update()
     {
@@ -21,18 +21,22 @@ public class UIManager : MonoBehaviour
         {
             ShowMenu(pauseMenu);
         }
-        if(Input.GetKeyDown(KeyCode.I) && !GameState.GetInstance().gamePaused && !inventoryActive)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            inventory.SetActive(true);
-            inventoryActive = true;
-            //TODO: AUDIO UI pop up noise (if existing)
-        }
-        if(Input.GetKeyDown(KeyCode.I) && !GameState.GetInstance().gamePaused && inventoryActive)
-        {
-            inventory.SetActive(false);
-            inventoryActive = false;
-            //TODO: AUDIO UI pop up noise (if existing)
-        }
+            if (GameState.GetInstance().gamePaused && inventoryActive)
+            {
+                inventory.CloseInventory();
+                inventoryActive = false;
+                //TODO: AUDIO UI pop up noise (if existing)
+            }
+            else if(!GameState.GetInstance().gamePaused && !inventoryActive)
+            {
+                inventory.OpenInventory();
+                inventoryActive = true;
+                GameState.GetInstance().gamePaused = true;
+                //TODO: AUDIO UI pop up noise (if existing)
+            }            
+        }      
     }
 
     public void ShowMenu(GameObject menuObject)

@@ -10,6 +10,7 @@ public class GameState : MonoBehaviour
     [System.NonSerialized] public bool hasMiles = false; 
     [System.NonSerialized] public int savedOxygenContainers;
     [System.NonSerialized] public bool savedRichmond;
+    [System.NonSerialized] public bool gotOrchid;
     public Vector3[] checkpointPositions;
     public int minExtraOxygenToSaveRichmond;
     private static GameState Instance;

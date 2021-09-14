@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissionLog : MonoBehaviour
 {
-    [SerializeField] private int missionLogNumber;
+    [SerializeField] public int missionLogNumber;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
