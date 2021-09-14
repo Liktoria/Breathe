@@ -154,7 +154,6 @@ public class PlayerMovement : MonoBehaviour
                 //TODO: AUDIO (OPTIONAL!!!) Impact sound after fall
                 FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Landing Emote", GetComponent<Transform>().position);
                 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ellen/Ellen_Hurt", GetComponent<Transform>().position);
-
                 isFalling = false;
             }
             isGrounded = true;
