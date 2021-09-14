@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !GameState.GetInstance().gamePaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameState.GetInstance().gamePaused)
         {
             ShowMenu(pauseMenu);
         }
@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 
     public void SwitchMenu(GameObject newMenu)
     {
-        StartCoroutine(fadeFunction(1f, 0f, fadeDuration));
+        StartCoroutine(fadeSwitchFunction(1f, 0f, fadeDuration, newMenu));
     }
 
     IEnumerator fadeFunction(float startValue, float endValue, float duration)
@@ -58,12 +58,12 @@ public class UIManager : MonoBehaviour
         {
             alpha = Mathf.Lerp(startValue, endValue, time / duration);
 
-            foreach(Image fadeImage in fadeImages)
+            foreach (Image fadeImage in fadeImages)
             {
                 fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, alpha);
             }
 
-            foreach(TMP_Text text in fadeTexts)
+            foreach (TMP_Text text in fadeTexts)
             {
                 text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
             }
@@ -84,6 +84,17 @@ public class UIManager : MonoBehaviour
         float time = 0;
         alpha = startValue;
         GameState.GetInstance().gamePaused = true;
+        newMenu.SetActive(true);
+        foreach(Image fadeImage in newMenu.GetComponent<Menu>().fadeImages)
+        {
+            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+        }
+
+        foreach (TMP_Text fadeText in newMenu.GetComponent<Menu>().fadeTexts)
+        {
+            fadeText.color = new Color(fadeText.color.r, fadeText.color.g, fadeText.color.b, 1);
+        }
+
 
         while (time < duration)
         {
@@ -107,6 +118,6 @@ public class UIManager : MonoBehaviour
         menuParent = newMenu;
         fadeImages = newMenu.GetComponent<Menu>().fadeImages;
         fadeTexts = newMenu.GetComponent<Menu>().fadeTexts;
-        StartCoroutine(fadeFunction(0, 1, fadeDuration));
+        //StartCoroutine(fadeFunction(0, 1, fadeDuration));
     }
 }

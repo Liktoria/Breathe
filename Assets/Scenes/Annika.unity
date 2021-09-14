@@ -1999,7 +1999,7 @@ PrefabInstance:
     - target: {fileID: 28411736499522207, guid: d4cca0c57f04b4c4ab5e131166cdae70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 766431517}
+      objectReference: {fileID: 1432713552}
     - target: {fileID: 28411736499522207, guid: d4cca0c57f04b4c4ab5e131166cdae70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
@@ -2030,7 +2030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3228981109459868732, guid: d4cca0c57f04b4c4ab5e131166cdae70, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3228981109459868732, guid: d4cca0c57f04b4c4ab5e131166cdae70, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2602,7 +2602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2994c5faf8620843987330eb0bbb870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueToTrigger: Roanoke Finds Richmond - V1 Richmond Lives - PT1
 --- !u!224 &999537643 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
@@ -2754,13 +2753,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1482344356}
     m_Modifications:
+    - target: {fileID: 5524772708018691353, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524772708018691353, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1654250965}
+    - target: {fileID: 5524772708018691353, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524772708018691353, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524772708018691353, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1432713552}
+    - target: {fileID: 5524772708018691353, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646598, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646598, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_Pivot.x
@@ -2772,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2792,11 +2815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1221.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 538.89
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2828,11 +2851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 516
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 239
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5524772708215646599, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3026,6 +3049,11 @@ Transform:
   m_Father: {fileID: 1578393235}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1432713552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5524772708215646598, guid: e51b953422cf9478cb4d8c41fedb1be3, type: 3}
+  m_PrefabInstance: {fileID: 1212896382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482344352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,8 +3148,8 @@ RectTransform:
   - {fileID: 516541344}
   - {fileID: 496257710}
   - {fileID: 2137759355}
-  - {fileID: 766431516}
   - {fileID: 999537643}
+  - {fileID: 766431516}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
