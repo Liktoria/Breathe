@@ -8,6 +8,7 @@ public class OxygenState : MonoBehaviour
     private float oxygen;
     [SerializeField] ProgressBar oxygenBar;
     private bool oxygenLossPaused = true;
+    [System.NonSerialized] public int extraOxygenContainers;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class OxygenState : MonoBehaviour
         {
             //You lost
             //Debug.Log("You lost");
+            LevelManager.GetInstance().currentPlayerHealth = 0;
+            GetComponent<PlayerHealth>().TakeHit();
             oxygen = 0.0f;
         }
         oxygenBar.BarValue = oxygen;
@@ -46,12 +49,9 @@ public class OxygenState : MonoBehaviour
         if(oxygen > 100.0f)
         {
             oxygen = 100.0f;
-        }
-        else if(oxygen < 0.0f)
-        {
-            oxygen = 0.0f;
-            //you lose
-            Debug.Log("You lost");
+            LevelManager.GetInstance().unsavedOxygenContainers++;
+            //Change UI
+            //TODO: AUDIO Add "gaining extra oxygen" sound if existing
         }
         oxygenBar.BarValue = oxygen;
     }
@@ -60,6 +60,7 @@ public class OxygenState : MonoBehaviour
     {
         if(collision.gameObject.tag == "Oxygen")
         {
+            //TODO: AUDIO Add collecting oxygen bubble/filling up tank sound
             UpdateOxygen(collectibleOxygenAmount);
             Destroy(collision.gameObject);
         }

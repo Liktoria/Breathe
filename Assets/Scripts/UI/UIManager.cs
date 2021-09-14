@@ -10,14 +10,28 @@ public class UIManager : MonoBehaviour
     private GameObject menuParent;
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject inventory;
     private float alpha;
     private TMP_Text[] fadeTexts;
+    private bool inventoryActive;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !GameState.GetInstance().gamePaused)
         {
             ShowMenu(pauseMenu);
+        }
+        if(Input.GetKeyDown(KeyCode.I) && !GameState.GetInstance().gamePaused && !inventoryActive)
+        {
+            inventory.SetActive(true);
+            inventoryActive = true;
+            //TODO: AUDIO UI pop up noise (if existing)
+        }
+        if(Input.GetKeyDown(KeyCode.I) && !GameState.GetInstance().gamePaused && inventoryActive)
+        {
+            inventory.SetActive(false);
+            inventoryActive = false;
+            //TODO: AUDIO UI pop up noise (if existing)
         }
     }
 
