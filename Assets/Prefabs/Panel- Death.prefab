@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 2230278332250926095}
   - component: {fileID: 3319561808992022285}
   - component: {fileID: 5674185901772146192}
+  - component: {fileID: 6792477742692392277}
   m_Layer: 5
   m_Name: Panel- Death
   m_TagString: Untagged
@@ -470,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.79607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -487,6 +488,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6792477742692392277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005102531757197809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583e8cf0b9a03be439e3b911e09bd29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImages:
+  - {fileID: 5674185901772146192}
+  fadeTexts:
+  - {fileID: 5250381657509202336}
+  - {fileID: 7490381226284339409}
+  - {fileID: 8610650700434803948}
 --- !u!1 &6727696442865970106
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54, y: 412}
+  m_AnchoredPosition: {x: 24, y: 412}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1617733884034431856
@@ -757,7 +776,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1246.7532, y: -7.708458, z: -1109.0691, w: -659.08014}
+  m_margin: {x: -527.0385, y: -7.708458, z: -530.81433, w: -659.08014}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
