@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public class Quit : MonoBehaviour
 {
-   public void Exitgame ()
+    public void QuitGame()
     {
-        Debug.Log("exitgame");
         Application.Quit();
     }
 }
