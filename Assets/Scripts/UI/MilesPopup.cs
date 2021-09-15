@@ -8,6 +8,7 @@ public class MilesPopup : MonoBehaviour
     [SerializeField] private GameObject richmondTrigger;
     [SerializeField] private Sprite deadRichmondSprite;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private GameObject richmondFollow;
     private bool dialogueTriggered;
 
     private void Start()
@@ -41,13 +42,12 @@ public class MilesPopup : MonoBehaviour
             if(GameState.GetInstance().savedRichmond)
             {
                 richmondTrigger.SetActive(false);
+                richmondFollow.SetActive(true);
             }
             else
             {
                 richmondTrigger.GetComponent<SpriteRenderer>().sprite = deadRichmondSprite;
-            }
-            //change Richmond Sprite / start following
-            //cameraController.GetBackToPlayer();
+            }            
             dialogueTriggered = false;
         }       
     }

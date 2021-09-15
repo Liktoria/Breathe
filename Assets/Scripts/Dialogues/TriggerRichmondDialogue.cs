@@ -34,7 +34,7 @@ public class TriggerRichmondDialogue : MonoBehaviour
         saveRichmondPopup.SetActive(false);
         GameState.GetInstance().gamePaused = true;
         DialogueManager.GetInstance().lastDialogue = false;
-        if (player.GetComponent<OxygenState>().extraOxygenContainers >= GameState.GetInstance().minExtraOxygenToSaveRichmond)
+        if (GameState.GetInstance().savedOxygenContainers + LevelManager.GetInstance().unsavedOxygenContainers >= GameState.GetInstance().minExtraOxygenToSaveRichmond)
         {
             dialogueTriggered = true;
             GameState.GetInstance().savedRichmond = true;
