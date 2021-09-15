@@ -180,7 +180,15 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Save Richmond
 
+<<<<<<< Updated upstream
         (5 Stored O2 required)'
+=======
+<<<<<<< HEAD
+        (5 stored 02s required)'
+=======
+        (5 Stored O2 required)'
+>>>>>>> 4133ae87d5165e8510d8615708e596b524aae3b3
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3218760248981207340, guid: 2408deac17db846c9868ff6ee23148f3, type: 3}
       propertyPath: m_fontSize
