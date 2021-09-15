@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/VO/Roanoke Barks/Eliminates Enemies Emote
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/VO/Roanoke Barks/Eliminates Enemies Emote
   guid: e47da96b8b7c9048810e03008b849a55
   Banks:
@@ -25,6 +26,17 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 1800
 --- !u!114 &-6805402489639037769
+=======
+  Path: Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637672199783819418
+  FileSizes:
+  - Name: Desktop
+    Value: 192032
+  Exists: 1
+--- !u!114 &-7759700277517076941
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,10 +51,10 @@ MonoBehaviour:
   Path: Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637672334350000000
+  lastModified: 637672199783841170
   FileSizes:
   - Name: Desktop
-    Value: 1246
+    Value: 864
   Exists: 1
 --- !u!114 &-5423572079030540578
 MonoBehaviour:
@@ -64,7 +76,11 @@ MonoBehaviour:
   - Name: Desktop
     Value: 489696
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &-4182648588902547902
+=======
+--- !u!114 &-6644201285606047648
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,6 +90,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< HEAD
   m_Name: event:/VO/Roanoke Barks/Low Air Emote
   m_EditorClassIdentifier: 
   Path: event:/VO/Roanoke Barks/Low Air Emote
@@ -81,14 +98,28 @@ MonoBehaviour:
   Banks:
   - {fileID: 4127399759325203611}
   - {fileID: -5423572079030540578}
+=======
+  m_Name: event:/SFX/Player Character/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Character/Jump
+  guid: 6318286933fbe14d930fa7fad997b587
+  Banks:
+  - {fileID: -6731524637955140399}
+  - {fileID: -4171916332267209921}
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+<<<<<<< HEAD
   Length: 4720
 --- !u!114 &-2470909278674778399
+=======
+  Length: 1500
+--- !u!114 &-6460308536948533927
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +129,59 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< HEAD
   m_Name: event:/VO/Roanoke Barks/Death Emote
+=======
+  m_Name: event:/SFX/Player Character/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Character/Footsteps
+  guid: dd66f00ededd804c9e27e10d6aa8168f
+  Banks:
+  - {fileID: -6731524637955140399}
+  - {fileID: -4171916332267209921}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 640
+--- !u!114 &-5841149998250095724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Character/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Character/Jump
+  guid: 6318286933fbe14d930fa7fad997b587
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
+--- !u!114 &-4506184192516709805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Character/Footsteps
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
   m_EditorClassIdentifier: 
   Path: event:/VO/Roanoke Barks/Death Emote
   guid: 598733acd8bc2d47910a38f91766f628
@@ -111,8 +194,13 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+<<<<<<< HEAD
   Length: 2720
 --- !u!114 &-1245534205489378112
+=======
+  Length: 640
+--- !u!114 &-4171916332267209921
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/VO/Roanoke Barks/Landing Emote
   m_EditorClassIdentifier: 
@@ -160,6 +249,19 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2720
+=======
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637672199783819418
+  FileSizes:
+  - Name: Desktop
+    Value: 192032
+  Exists: 1
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +279,7 @@ MonoBehaviour:
   - {fileID: 4127399759325203611}
   - {fileID: -5423572079030540578}
   EditorEvents:
+<<<<<<< HEAD
   - {fileID: 3347304976647085358}
   - {fileID: -4182648588902547902}
   - {fileID: -2470909278674778399}
@@ -186,14 +289,25 @@ MonoBehaviour:
   - {fileID: 1559575710342907102}
   - {fileID: -8193468338436924557}
   - {fileID: 601081742009948837}
+=======
+  - {fileID: -5841149998250095724}
+  - {fileID: -4506184192516709805}
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
   EditorParameters: []
   MasterBanks:
   - {fileID: -5423572079030540578}
   StringsBanks:
+<<<<<<< HEAD
   - {fileID: -6805402489639037769}
   stringsBankWriteTime: 637672334350000000
   cacheVersion: 8
 --- !u!114 &601081742009948837
+=======
+  - {fileID: -7759700277517076941}
+  stringsBankWriteTime: 637672199783841170
+  cacheVersion: 8
+--- !u!114 &1744109695578329123
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,6 +316,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/VO/Roanoke Barks/Takes Damage Emote
   m_EditorClassIdentifier: 
@@ -217,6 +332,40 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 1600
 --- !u!114 &1559575710342907102
+=======
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637672199783841170
+  FileSizes:
+  - Name: Desktop
+    Value: 864
+  Exists: 1
+--- !u!114 &1789098188927788582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637672199783841170
+  FileSizes:
+  - Name: Desktop
+    Value: 864
+  Exists: 1
+--- !u!114 &2728797124788523646
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,11 +428,12 @@ MonoBehaviour:
   Path: Build/Desktop/Breathe.bank
   Name: Breathe
   StudioPath: bank:/Breathe
-  lastModified: 637672334350000000
+  lastModified: 637672199784168418
   FileSizes:
   - Name: Desktop
-    Value: 453376
+    Value: 191520
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &6731431430995729908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +458,5 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
+=======
+>>>>>>> parent of 8cb2f64 (did a thing. hope it worked)
