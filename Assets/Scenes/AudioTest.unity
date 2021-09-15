@@ -7616,6 +7616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5951366847848641069}
   cameraController: {fileID: 519420030}
+  mainMenu: {fileID: 0}
+  creditsScript: {fileID: 0}
 --- !u!61 &627602722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8228,7 +8230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3228981109459868732, guid: d4cca0c57f04b4c4ab5e131166cdae70, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 3228981109459868732, guid: d4cca0c57f04b4c4ab5e131166cdae70, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12057,6 +12059,7 @@ MonoBehaviour:
   oxygenStorage: {fileID: 0}
   oxygenState: {fileID: 0}
   oxygenReloadValue: 0
+  allMissionLogs: []
 --- !u!4 &1654250962
 Transform:
   m_ObjectHideFlags: 0
@@ -12105,7 +12108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6231241bd800ae4f999150d252bc72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackImage: {fileID: 0}
+  blackMenu: {fileID: 0}
 --- !u!114 &1654250965
 MonoBehaviour:
   m_ObjectHideFlags: 0
