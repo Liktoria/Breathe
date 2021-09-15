@@ -15,7 +15,7 @@
                 },
                 {
                     "name": "Commander Ives",
-                    "text": "Don't give me shit Taylor. I'm leveling with you. Might not be anything left of A.E.R.O.'s Genesis Crew. But none of us survive if you don't come back with that plant.",
+                    "text": "Don't give me shit Taylor. I'm leveling with you. There might not be anything left of A.E.R.O.'s Genesis Crew. But none of us survive if you don't come back with that plant.",
                     "side": 2
                 },
                 {
@@ -81,7 +81,7 @@
             "lines": [
                 {
                     "name": "Richmond Taylor - Mission Log",
-                    "text": "Damn. Animals. Got pissier than a cricket’s whisker when I plucked a flower. Miles came in handy. Animals. Actual animals.",
+                    "text": "Damn. Animals. Got pissier than a cricket’s whisker when I plucked a flower. Miles sure came in handy. Animals. Actual animals.",
                     "side": 1
                 }
             ]
