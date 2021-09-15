@@ -231,7 +231,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -242,6 +242,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 15745617}
@@ -250,11 +254,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 15745615}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 15745619}
+    - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
@@ -266,6 +278,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MilesPopup, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -274,11 +290,19 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TriggerAudioMilesPickup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 716349636071018532, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1366774423480524877, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
@@ -400,6 +424,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fa61a9c23013d49a9f2a7f6dbcc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &15745618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5822013467229562286, guid: 43bad1cade61f457a8a2eac81f67a6be, type: 3}
+  m_PrefabInstance: {fileID: 15745614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15745619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15745618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534485ee90eab3b428ba5469f7b0349c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SFX/Miles/Miles Pickup
+  PlayOnAwake: 0
 --- !u!1001 &43549703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6218,6 +6261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   followTarget: {fileID: 5951366847848641067}
+  bounds: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -8878,6 +8922,7 @@ MonoBehaviour:
   player: {fileID: 5951366847848641069}
   milesPopup: {fileID: 15745615}
   cameraController: {fileID: 519420030}
+  saveRichmondPopup: {fileID: 0}
 --- !u!1 &870999493
 GameObject:
   m_ObjectHideFlags: 0
@@ -12004,10 +12049,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9201f0d49ffbde7499545307ccd1eaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oxygenBubbles: []
   player: {fileID: 5951366847848641069}
   oxygenBar: {fileID: 2074618857}
   totalPlayerHealth: 5
   inventory: {fileID: 570058715}
+  oxygenStorage: {fileID: 0}
+  oxygenState: {fileID: 0}
+  oxygenReloadValue: 0
 --- !u!4 &1654250962
 Transform:
   m_ObjectHideFlags: 0
@@ -12056,6 +12105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6231241bd800ae4f999150d252bc72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackImage: {fileID: 0}
 --- !u!114 &1654250965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13807,27 +13857,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 6
   jumpForce: 5
+  gravityY: 0
   isGroundedChecker: {fileID: 5951366846765618136}
-  wallChecker: {fileID: 5951366846584101189}
   groundRadius: 0.4
-  wallRadius: 0.52
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 128
   rememberGroundedFor: 0.1
   fallMultiplier: 1.5
   lowJumpMultiplier: 2
   defaultJumpCount: 1
   walkingSprite: {fileID: 21300000, guid: 9f54c0a60c8ab6b4baedad6ab8063259, type: 3}
   standingSprite: {fileID: 21300000, guid: c51326fcdccb2d2478cb75ada85cd1f8, type: 3}
-  cameraController: {fileID: 519420030}
-  jumpingSound: {fileID: 0}
-  walkingSound: {fileID: 0}
-  fallingSound: {fileID: 0}
-  impactSound: {fileID: 0}
 --- !u!4 &5951366846584101189
 Transform:
   m_ObjectHideFlags: 0
@@ -14031,7 +14072,10 @@ MonoBehaviour:
   timeBetweenOxygenReductions: 0.25
   reductionAmount: 1
   collectibleOxygenAmount: 20
+  finalReductionAmount: 0
+  finalTimeBetweenReductions: 0
   oxygenBar: {fileID: 2074618857}
+  oxygenStorage: {fileID: 0}
 --- !u!114 &5951366847848641073
 MonoBehaviour:
   m_ObjectHideFlags: 0
