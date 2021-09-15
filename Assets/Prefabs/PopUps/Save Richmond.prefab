@@ -180,7 +180,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Save Richmond
 
-        (Sufficient 02 required)'
+        (5 Stored O2 required)'
       objectReference: {fileID: 0}
     - target: {fileID: 3218760248981207340, guid: 2408deac17db846c9868ff6ee23148f3, type: 3}
       propertyPath: m_fontSize
