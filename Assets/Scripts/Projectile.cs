@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
         {
             //deal damage to enemy
             Debug.Log("Hit an enemy!");
+            //AUDIO bullet impact
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Miles/Miles Impact", GetComponent<Transform>().position);
             Destroy(this.gameObject);
         }
     }
