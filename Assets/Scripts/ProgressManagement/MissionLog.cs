@@ -21,6 +21,7 @@ public class MissionLog : MonoBehaviour
             }
             //TODO: AUDIO beginning mission log sound
             //TODO: AUDIO Play VO for mission log with number missionLogNumber
+            FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Mission Logs/ML" + missionLogNumber, GetComponent<Transform>().position);
         }
     }
 }
