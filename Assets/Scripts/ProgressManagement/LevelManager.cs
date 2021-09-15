@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private OxygenStorage oxygenStorage;
     [SerializeField] private OxygenState oxygenState;
     [SerializeField] private float oxygenReloadValue;
+    [SerializeField] private List<GameObject> allMissionLogs = new List<GameObject>();
 
     private void Awake()
     {
@@ -94,9 +95,36 @@ public class LevelManager : MonoBehaviour
         return Instance;
     }
 
+    public void ResetProgressAndLoad()
+    {
+        for (int i = 0; i < oxygenBubbles.Count; i++)
+        {
+            oxygenBubbles[i].SetActive(true);
+        }
+        for (int i = 0; i < allMissionLogs.Count; i++)
+        {
+            allMissionLogs[i].SetActive(true);
+        }
+        GameState.GetInstance().savedMissionLogs.Clear();
+        GameState.GetInstance().hasMiles = false;
+        GameState.GetInstance().savedOxygenContainers = 0;
+        GameState.GetInstance().gotOrchid = false;
+        GameState.GetInstance().firstCollectMissionLog = true;
+        GameState.GetInstance().firstCollectOxygen = true;
+        GameState.GetInstance().lastCheckpoint = 0;
+        GameState.GetInstance().savedRichmond = false;
+        inventory.InitInventory();
+        oxygenState.ResetOxygenToValue(100);
+        oxygenState.SetFirstOxygenValues();
+        currentPlayerHealth = totalPlayerHealth;
+    }
+
     public void StartWayBack()
     {
-        SaveProgress(5); //TODO: replace with accurate value
+        for (int i = 0; i < oxygenBubbles.Count; i++)
+        {
+            oxygenBubbles[i].SetActive(false);
+        } //TODO: replace with accurate value
         //TODO: make creatures aggressive -> change their path pattern and make them deal damage to the player
         //TODO: change oxygen depleting speed
         //TODO: make Richmond follow the player
