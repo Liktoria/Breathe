@@ -11,6 +11,7 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] Light light;
     [SerializeField] Sprite newOrchidSprite;
     [SerializeField] OxygenState oxygenState;
+    [SerializeField] Inventory inventory;
     private static PopUpManager instance;
     private int missionLogNumber;
 
@@ -68,6 +69,7 @@ public class PopUpManager : MonoBehaviour
         GameState.GetInstance().gamePaused = false;
         orchid.SetActive(false);
         light.color = new Color(0.9811321f, 0.5590602f, 0.5590602f, 1);
+        inventory.AcquiredOrchid();
         //make enemies aggressive
     }
 
@@ -79,7 +81,7 @@ public class PopUpManager : MonoBehaviour
         GameState.GetInstance().gamePaused = false;
         light.color = new Color(0.9811321f, 0.5590602f, 0.5590602f, 1);
         orchid.GetComponent<SpriteRenderer>().sprite = newOrchidSprite;
+        inventory.AcquiredOrchid();
         //make enemies aggressive
-        
     }
 }
