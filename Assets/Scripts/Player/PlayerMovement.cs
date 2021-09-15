@@ -9,12 +9,10 @@ public class PlayerMovement : MonoBehaviour
     //private Animator animator;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float gravityY;
     [SerializeField] private Transform isGroundedChecker;
-    [SerializeField] private Transform wallChecker;
     [SerializeField] private float groundRadius;
-    [SerializeField] private float wallRadius;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask wallLayer;
     //[SerializeField]
     //private LayerMask stickyLayer;
     [SerializeField] private float rememberGroundedFor;
@@ -23,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int defaultJumpCount = 1;
     [SerializeField] private Sprite walkingSprite;
     [SerializeField] private Sprite standingSprite;
-    [SerializeField] private CameraController cameraController;
-    [SerializeField] private AudioClip jumpingSound;
-    [SerializeField] private AudioClip walkingSound;
-    [SerializeField] private AudioClip fallingSound;
-    [SerializeField] private AudioClip impactSound;
+    //[SerializeField] private CameraController cameraController;
+    //[SerializeField] private AudioClip jumpingSound;
+    //[SerializeField] private AudioClip walkingSound;
+    //[SerializeField] private AudioClip fallingSound;
+    //[SerializeField] private AudioClip impactSound;
     private bool isFalling = false;
     private Rigidbody2D rb;
     private bool isGrounded = true;
@@ -43,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Physics2D.gravity = new Vector2(0, -5f);
+        Physics2D.gravity = new Vector2(0, gravityY);
         characterRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -78,7 +76,11 @@ public class PlayerMovement : MonoBehaviour
                     if(characterRenderer.sprite != walkingSprite)
                     {
                         characterRenderer.sprite = walkingSprite;
-                    }                    
+                    }
+                    if(characterRenderer.flipX)
+                    {
+                        //TODO: AUDIO Play paper flip sound
+                    }
                     characterRenderer.flipX = false;
                     walkingDirection = 1;
                     //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
@@ -90,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
                     {
                         characterRenderer.sprite = walkingSprite;
                     }                    
+                    if(!characterRenderer.flipX)
+                    {
+                        //TODO: AUDIO Play paper flip sound
+                    }
                     characterRenderer.flipX = true;
                     walkingDirection = -1;
                     //TODO: AUDIO: if(sound is not currently playing) -> play walking sound

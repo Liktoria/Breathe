@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private List<GameObject> unsavedMissionLogs = new List<GameObject>();
+    [SerializeField] List<GameObject> oxygenBubbles = new List<GameObject>();
     [System.NonSerialized] public int unsavedOxygenContainers;
     [System.NonSerialized] public int currentPlayerHealth;
     private static LevelManager Instance;
@@ -43,6 +44,7 @@ public class LevelManager : MonoBehaviour
         {
             GameState.GetInstance().savedMissionLogs.Add(missionLog);
         }
+
         unsavedMissionLogs.Clear();
         GameState.GetInstance().lastCheckpoint = checkPointIndex;
         GameState.GetInstance().savedOxygenContainers += unsavedOxygenContainers;
@@ -55,6 +57,12 @@ public class LevelManager : MonoBehaviour
         {
             unsavedMissionLogs[i].SetActive(true);
         }
+
+        for (int i = 0; i < oxygenBubbles.Count; i++)
+        {
+            oxygenBubbles[i].SetActive(true);
+        }
+
         unsavedMissionLogs.Clear();
         inventory.InitInventory();
         for (int j = 0; j < GameState.GetInstance().savedMissionLogs.Count; j++)
@@ -63,7 +71,8 @@ public class LevelManager : MonoBehaviour
             missionLog.SetActive(false);
             inventory.CollectedMissionLog(missionLog.GetComponent<MissionLog>().missionLogNumber);
         }
-        if(GameState.GetInstance().hasMiles)
+
+        if (GameState.GetInstance().hasMiles)
         {
             inventory.AcquiredMiles();
         }

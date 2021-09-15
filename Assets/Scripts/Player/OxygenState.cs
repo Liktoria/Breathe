@@ -5,6 +5,8 @@ public class OxygenState : MonoBehaviour
     [SerializeField] private float timeBetweenOxygenReductions;
     [SerializeField] private float reductionAmount;
     [SerializeField] private float collectibleOxygenAmount;
+    [SerializeField] private float finalReductionAmount;
+    [SerializeField] private float finalTimeBetweenReductions;
     [SerializeField] ProgressBar oxygenBar;
     [SerializeField] OxygenStorage oxygenStorage;
     [System.NonSerialized] public int extraOxygenContainers;
@@ -93,5 +95,11 @@ public class OxygenState : MonoBehaviour
     {
         oxygen = value;
         oxygenBar.BarValue = oxygen;
+    }
+
+    public void SetFinalOxygenValues()
+    {
+        reductionAmount = finalReductionAmount;
+        timeBetweenOxygenReductions = finalTimeBetweenReductions;
     }
 }

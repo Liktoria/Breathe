@@ -53,25 +53,26 @@ public class Shooting : MonoBehaviour
 
         if (shootingDirection.x <= 0)
         {
-            characterRenderer.flipX = true;
+            if(!characterRenderer.flipX)
+            {
+                //TODO: AUDIO Play paper flip sound
+            }
+            characterRenderer.flipX = true;            
             instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffsetLeft, Quaternion.Euler(0, 0, angle));
         }
         else
         {
+            if(characterRenderer.flipX)
+            {
+                //TODO: AUDIO Play paper flip sound
+            }
             characterRenderer.flipX = false;
-            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, -angle));
+            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, angle));
         }
         //TODO: AUDIO Shooting sound
         Rigidbody2D rbProjectile = instantiatedProjectile.GetComponent<Rigidbody2D>();
         instantiatedProjectile.GetComponent<Projectile>().DegradeProjectile();
 
-        rbProjectile.velocity = shootingDirection * projectileSpeed;
-        
-    }
-
-    IEnumerator delaySpriteTransition(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        isShooting = false;
+        rbProjectile.velocity = shootingDirection * projectileSpeed;        
     }
 }

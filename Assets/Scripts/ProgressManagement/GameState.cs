@@ -6,8 +6,9 @@ public class GameState : MonoBehaviour
 {
     [System.NonSerialized] public int lastCheckpoint;
     [System.NonSerialized] public List<GameObject> savedMissionLogs = new List<GameObject>();
+    [System.NonSerialized] public List<GameObject> savedOxygenBubbles = new List<GameObject>();
     [System.NonSerialized] public bool gamePaused = true; 
-    [System.NonSerialized] public bool hasMiles = false; 
+    [System.NonSerialized] public bool hasMiles = true; 
     [System.NonSerialized] public int savedOxygenContainers;
     [System.NonSerialized] public bool savedRichmond;
     [System.NonSerialized] public bool gotOrchid;

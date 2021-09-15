@@ -9,11 +9,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!hasSaved)
-        {
-            LevelManager.GetInstance().SaveProgress(checkpointIndex);
-            Debug.Log("Progress saved!");
-            hasSaved = true;
-        }
+        LevelManager.GetInstance().SaveProgress(checkpointIndex);
+        Debug.Log("Progress saved!");
     }
 }
