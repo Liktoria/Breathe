@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private TMP_Text deathQuoteTextField;
     [SerializeField] private string[] allDeathQuotes;
+    [SerializeField] private SpriteRenderer minusOne;
     private List<string> currentDeathQuotes = new List<string>();
 
     // Start is called before the first frame update
@@ -35,11 +36,14 @@ public class PlayerHealth : MonoBehaviour
         if (LevelManager.GetInstance().currentPlayerHealth > 1)
         {
             LevelManager.GetInstance().currentPlayerHealth--;
+            ShowText();
+
         }
         else
         {
             //die
             LevelManager.GetInstance().currentPlayerHealth = 0;
+            ShowText();
             GameState.GetInstance().gamePaused = true;
             FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Death Emote", GetComponent<Transform>().position);
             if (currentDeathQuotes.Count <= 0)
@@ -68,5 +72,17 @@ public class PlayerHealth : MonoBehaviour
             }
             deathPanel.SetActive(true);
         }
+    }
+
+    public void ShowText()
+    {
+        minusOne.color = new Color(minusOne.color.r, minusOne.color.g, minusOne.color.b, 1);
+        StartCoroutine(WaitToHide(minusOne));
+    }
+
+    IEnumerator WaitToHide(SpriteRenderer minusOne)
+    {
+        yield return new WaitForSeconds(1.5f);
+        minusOne.color = new Color(minusOne.color.r, minusOne.color.g, minusOne.color.b, 0);
     }
 }

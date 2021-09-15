@@ -65,6 +65,7 @@ public class PopUpManager : MonoBehaviour
     public void HideOrchidPopupWhole()
     {
         oxygenState.SetFinalOxygenValues();
+        oxygenState.ResetOxygenToValue(100);
         orchidPopup.SetActive(false);
         GameState.GetInstance().gamePaused = false;
         orchid.SetActive(false);

@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private OxygenState oxygenState;
     [SerializeField] private float oxygenReloadValue;
     [SerializeField] private List<GameObject> allMissionLogs = new List<GameObject>();
+    [SerializeField] private List<GameObject> allEnemies = new List<GameObject>();
 
     private void Awake()
     {
@@ -62,6 +63,10 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < oxygenBubbles.Count; i++)
         {
             oxygenBubbles[i].SetActive(true);
+        }
+        for(int i = 0; i < allEnemies.Count; i++)
+        {
+            allEnemies[i].SetActive(true);
         }
 
         unsavedMissionLogs.Clear();
