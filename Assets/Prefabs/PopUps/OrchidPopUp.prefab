@@ -565,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218760248981207340, guid: 2408deac17db846c9868ff6ee23148f3, type: 3}
       propertyPath: m_text
-      value: Harvest Some- Propagate and give Ceres a chance.
+      value: Harvest Some - Ceres could be home again.
       objectReference: {fileID: 0}
     - target: {fileID: 3218760248981207340, guid: 2408deac17db846c9868ff6ee23148f3, type: 3}
       propertyPath: m_fontSize
@@ -723,7 +723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218760248981207340, guid: 2408deac17db846c9868ff6ee23148f3, type: 3}
       propertyPath: m_text
-      value: Harvest All- The ARK is the future.
+      value: Harvest All - The ARK is the future.
       objectReference: {fileID: 0}
     - target: {fileID: 3218760248981207340, guid: 2408deac17db846c9868ff6ee23148f3, type: 3}
       propertyPath: m_fontSize
