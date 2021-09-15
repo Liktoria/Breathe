@@ -46,7 +46,7 @@ public class MilesPopup : MonoBehaviour
                 richmondTrigger.GetComponent<SpriteRenderer>().sprite = deadRichmondSprite;
             }
             //change Richmond Sprite / start following
-            cameraController.GetBackToPlayer();
+            //cameraController.GetBackToPlayer();
             dialogueTriggered = false;
         }       
     }

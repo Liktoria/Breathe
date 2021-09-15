@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Cutscene : MonoBehaviour
 {
-    [SerializeField] private Image blackImage;
+    [SerializeField] private GameObject blackMenu;
     private float alpha;
     private void Start()
     {
@@ -20,10 +20,11 @@ public class Cutscene : MonoBehaviour
     }
     private void DialogueEnded()
     {
-        StartCoroutine(fadeOutBlack(1, 0, 1.5f));
+        //StartCoroutine(fadeOutBlack(1, 0, 1.5f));
+        GetComponent<UIManager>().HideMenu(blackMenu);
     }
 
-    IEnumerator fadeOutBlack(float startValue, float endValue, float duration)
+    /*IEnumerator fadeOutBlack(float startValue, float endValue, float duration)
     {
         float time = 0;
         alpha = startValue;
@@ -38,5 +39,5 @@ public class Cutscene : MonoBehaviour
         }
         blackImage.gameObject.SetActive(false);
         GameState.GetInstance().gamePaused = false;
-    }
+    }*/
 }
