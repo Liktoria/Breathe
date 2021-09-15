@@ -20,7 +20,7 @@
                 },
                 {
                     "name": "Roanoke Taylor",
-                    "text": "I know! I get it. I'm worried. Hell, I'm scared. I'm...You know, I love red velvet cupcakes. Least you could do, considering I'm saving the world.",
+                    "text": "I know! I'm worried. Hell, I'm scared. I'm...You know, I love red velvet cupcakes. Least you could do, considering I'm saving the world.",
                     "side": 1
                 },
                 {
@@ -328,11 +328,6 @@
                     "name": "Commander Ives",
                     "text": "I'm glad you're coming home Taylor.",
                     "side": 2
-                },
-                {
-                    "name": "Roanoke Taylor",
-                    "text": "Let's debrief when I'm back.",
-                    "side": 1
                 }
             ]
         }
