@@ -16,7 +16,7 @@ public class Cutscene : MonoBehaviour
     {
         GameState.GetInstance().gamePaused = true;
         DialogueManager.GetInstance().StartDialogue("Opening Scene");
-        //TODO: AUDIO Start VO "Opening Scene"
+        FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/Opening Scene", GetComponent<Transform>().position);
     }
     private void DialogueEnded()
     {

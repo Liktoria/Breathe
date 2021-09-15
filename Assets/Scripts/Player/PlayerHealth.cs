@@ -24,7 +24,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy" && GameState.GetInstance().hasMiles)
         {
-            //TODO: AUDIO Got hit by enemy sound
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Damage", GetComponent<Transform>().position);
             FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Takes Damage Emote", GetComponent<Transform>().position);
             TakeHit();
@@ -42,7 +41,6 @@ public class PlayerHealth : MonoBehaviour
             //die
             LevelManager.GetInstance().currentPlayerHealth = 0;
             GameState.GetInstance().gamePaused = true;
-            //TODO: AUDIO Suffocated to death
             FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Death Emote", GetComponent<Transform>().position);
             if (currentDeathQuotes.Count <= 0)
             {

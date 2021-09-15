@@ -25,13 +25,13 @@ public class TriggerShipDialogue : MonoBehaviour
             if (player.GetComponent<OxygenState>().extraOxygenContainers >= GameState.GetInstance().minExtraOxygenToSaveRichmond)
             {
                 DialogueManager.GetInstance().StartDialogue("Final Scene - V1 Richmond Alive");
-                //TODO: AUDIO Start VO "Final Scene - V2 Richmond Alive"
+                FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/Final Scene V1", GetComponent<Transform>().position);
                 dialogueTriggered = true;
             }
             else
             {
                 DialogueManager.GetInstance().StartDialogue("Final Scene - V2 Richmond Dead");
-                //TODO: AUDIO Start VO "Final Scene - V2 Richmond Dead"
+                FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/Final Scene V2", GetComponent<Transform>().position);
                 dialogueTriggered = true;
             }
 

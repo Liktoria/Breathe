@@ -22,14 +22,14 @@ public class MilesPopup : MonoBehaviour
         if (GameState.GetInstance().savedRichmond)
         {
             dialogueTriggered = true;
-            DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V1 Richmond Lives - PT2");
-            //TODO: AUDIO Start VO "Roanoke Finds Richmond - V1 Richmond Lives - PT2"            
+            DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V1 Richmond Lives - PT2");     
+            FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/R finds R V1 pt 2", GetComponent<Transform>().position);  
         }
         else
         {
             dialogueTriggered = true;
-            DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V2 Richmond Dies - PT2");
-            //TODO: AUDIO Start VO "Roanoke Finds Richmond - V2 Richmond Dies - PT2"            
+            DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V2 Richmond Dies - PT2");  
+            FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/R finds R V2 pt 2", GetComponent<Transform>().position);       
         }
     }
 

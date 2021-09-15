@@ -39,14 +39,14 @@ public class TriggerRichmondDialogue : MonoBehaviour
             dialogueTriggered = true;
             GameState.GetInstance().savedRichmond = true;
             DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V1 Richmond Lives - PT1");
-            //TODO: AUDIO Start VO "Roanoke Finds Richmond - V1 Richmond Lives - PT1"
+            FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/R finds R V1 pt 1", GetComponent<Transform>().position);
         }
         else
         {
             dialogueTriggered = true;
             GameState.GetInstance().savedRichmond = false;
             DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V2 Richmond Dies - PT1");
-            //TODO: AUDIO Start VO "Roanoke Finds Richmond - V2 Richmond Dies - PT1"
+            FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/R finds R V2 pt 1", GetComponent<Transform>().position);
         }        
     }
 
@@ -56,7 +56,6 @@ public class TriggerRichmondDialogue : MonoBehaviour
         {
             GameState.GetInstance().gamePaused = true;
             milesPopup.SetActive(true);            
-            //TODO: AUDIO pop up sound (if exsiting)
             dialogueTriggered = false;
         }        
     }
