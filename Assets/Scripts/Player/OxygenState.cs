@@ -81,7 +81,7 @@ public class OxygenState : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Oxygen/Oxygen Collection", GetComponent<Transform>().position);
             FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Oxygen Collection Emote", GetComponent<Transform>().position);
             UpdateOxygen(collectibleOxygenAmount);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 
