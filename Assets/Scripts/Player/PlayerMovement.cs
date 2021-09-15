@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     if(characterRenderer.flipX)
                     {
-                        //TODO: AUDIO Play paper flip sound
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
                     }
                     characterRenderer.flipX = false;
                     walkingDirection = 1;
@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
                     }                    
                     if(!characterRenderer.flipX)
                     {
-                        //TODO: AUDIO Play paper flip sound
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
                     }
                     characterRenderer.flipX = true;
                     walkingDirection = -1;
@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor || jumpCounter > 0)
             {
                 jumping = true;
-                //TODO: AUDIO:Jumping sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Jump", GetComponent<Transform>().position);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Jump Emote", GetComponent<Transform>().position);
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpCounter--;
@@ -157,9 +157,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isFalling)
             {
-                //TODO: AUDIO (OPTIONAL!!!) Impact sound after fall
                 FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Roanoke Barks/Landing Emote", GetComponent<Transform>().position);
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ellen/Ellen_Hurt", GetComponent<Transform>().position);
                 isFalling = false;
             }
             isGrounded = true;

@@ -55,7 +55,7 @@ public class Shooting : MonoBehaviour
         {
             if(!characterRenderer.flipX)
             {
-                //TODO: AUDIO Play paper flip sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
             }
             characterRenderer.flipX = true;            
             instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffsetLeft, Quaternion.Euler(0, 0, angle));
@@ -64,12 +64,12 @@ public class Shooting : MonoBehaviour
         {
             if(characterRenderer.flipX)
             {
-                //TODO: AUDIO Play paper flip sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
             }
             characterRenderer.flipX = false;
             instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, angle));
         }
-        //TODO: AUDIO Shooting sound
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Miles/Miles Gunshot", GetComponent<Transform>().position);
         Rigidbody2D rbProjectile = instantiatedProjectile.GetComponent<Rigidbody2D>();
         instantiatedProjectile.GetComponent<Projectile>().DegradeProjectile();
 
