@@ -19,6 +19,7 @@ public class Credits : MonoBehaviour
     public void StartCredits()
     {
         creditsRunning = true;
+        GameState.GetInstance().gamePaused = true;
         creditsGameObject.SetActive(true);
         creditsAnimator.Play("Credits");
     }
