@@ -18251,7 +18251,7 @@ MonoBehaviour:
   - {x: 552, y: -6, z: 0}
   - {x: 676, y: -6, z: 0}
   - {x: 901, y: -7, z: 0}
-  minExtraOxygenToSaveRichmond: 4
+  minExtraOxygenToSaveRichmond: 5
 --- !u!114 &1654250961
 MonoBehaviour:
   m_ObjectHideFlags: 0
