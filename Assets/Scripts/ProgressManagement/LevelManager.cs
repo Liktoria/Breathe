@@ -76,10 +76,8 @@ public class LevelManager : MonoBehaviour
         currentPlayerHealth = totalPlayerHealth;
         oxygenState.ResetOxygenToValue(oxygenReloadValue);
         GameState.GetInstance().gamePaused = false;
-        //player.GetComponent<OxygenState>().StartOxygenLoss();
         unsavedOxygenContainers = 0;
         oxygenStorage.UpdateNumber();
-        //Update OxygenContainerUI
     }
 
     public static LevelManager GetInstance()
