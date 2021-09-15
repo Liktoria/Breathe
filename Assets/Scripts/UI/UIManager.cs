@@ -95,10 +95,14 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
 
-        if (endValue == 0 && menuParent.name != "Main Menu")
+        if (endValue == 0)
         {
             menuParent.SetActive(false);
             GameState.GetInstance().gamePaused = false;
+        }
+        if(menuParent.name == "Main Menu")
+        {
+            GameState.GetInstance().gamePaused = true;
         }
     }
 

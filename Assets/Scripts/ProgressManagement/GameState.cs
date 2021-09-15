@@ -11,6 +11,8 @@ public class GameState : MonoBehaviour
     [System.NonSerialized] public int savedOxygenContainers;
     [System.NonSerialized] public bool savedRichmond;
     [System.NonSerialized] public bool gotOrchid;
+    [System.NonSerialized] public bool firstCollectOxygen = true;
+    [System.NonSerialized] public bool firstCollectMissionLog = true;
     public Vector3[] checkpointPositions;
     public int minExtraOxygenToSaveRichmond;
     private static GameState Instance;

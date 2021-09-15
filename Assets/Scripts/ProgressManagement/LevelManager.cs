@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int totalPlayerHealth;
     [SerializeField] private Inventory inventory;
     [SerializeField] private OxygenStorage oxygenStorage;
+    [SerializeField] private OxygenState oxygenState;
+    [SerializeField] private float oxygenReloadValue;
 
     private void Awake()
     {
@@ -72,7 +74,7 @@ public class LevelManager : MonoBehaviour
         //place player at checkpoint position
         player.transform.position = GameState.GetInstance().checkpointPositions[GameState.GetInstance().lastCheckpoint];
         currentPlayerHealth = totalPlayerHealth;
-        oxygenBar.BarValue = 75;
+        oxygenState.ResetOxygenToValue(oxygenReloadValue);
         GameState.GetInstance().gamePaused = false;
         //player.GetComponent<OxygenState>().StartOxygenLoss();
         unsavedOxygenContainers = 0;

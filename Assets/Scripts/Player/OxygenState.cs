@@ -5,11 +5,11 @@ public class OxygenState : MonoBehaviour
     [SerializeField] private float timeBetweenOxygenReductions;
     [SerializeField] private float reductionAmount;
     [SerializeField] private float collectibleOxygenAmount;
-    private float oxygen;
     [SerializeField] ProgressBar oxygenBar;
     [SerializeField] OxygenStorage oxygenStorage;
-    private bool oxygenLossPaused = true;
     [System.NonSerialized] public int extraOxygenContainers;
+    private bool oxygenLossPaused = true;
+    private float oxygen;  
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +61,10 @@ public class OxygenState : MonoBehaviour
             //TODO: AUDIO Add "gaining extra oxygen" sound if existing
         }
         oxygenBar.BarValue = oxygen;
+        if(GameState.GetInstance().firstCollectOxygen)
+        {
+            PopUpManager.GetInstance().ShowOxygenPopup();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -83,5 +87,11 @@ public class OxygenState : MonoBehaviour
     public void PauseOxygenLoss()
     {
         CancelInvoke("ReduceOxygen");
+    }
+
+    public void ResetOxygenToValue(float value)
+    {
+        oxygen = value;
+        oxygenBar.BarValue = oxygen;
     }
 }
