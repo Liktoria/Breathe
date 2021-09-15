@@ -12523,6 +12523,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7282454977046766000, guid: ba7c1c6bab0b6cb4bbb5eb9543779a1c, type: 3}
   m_PrefabInstance: {fileID: 879595551}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &880424353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5036623981606856548, guid: 1b002e377f65eab4d99fd57901a814a3, type: 3}
+  m_PrefabInstance: {fileID: 510699738445425412}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &881404794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21666,6 +21677,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 510699738256329611, guid: 1b002e377f65eab4d99fd57901a814a3, type: 3}
+      propertyPath: fadeImages.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 510699738256329611, guid: 1b002e377f65eab4d99fd57901a814a3, type: 3}
+      propertyPath: fadeImages.Array.data[8]
+      value: 
+      objectReference: {fileID: 880424353}
     - target: {fileID: 510699738256329615, guid: 1b002e377f65eab4d99fd57901a814a3, type: 3}
       propertyPath: m_Name
       value: BlackMenu
