@@ -45,6 +45,7 @@ public class Shooting : MonoBehaviour
     private void Shoot()
     {
         Vector3 cursorScreenPosition = Input.mousePosition;
+        cursorScreenPosition.z = 10;
         Vector3 localCursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPosition);
         Vector2 localCursorPosition2D = new Vector2(localCursorPosition.x, localCursorPosition.y);
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
