@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 166}
+  m_AnchoredPosition: {x: 7, y: 184}
   m_SizeDelta: {x: 265.8608, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &617336553893307044
@@ -65,7 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oxygen Storage
+  m_text: 'Oxygen Storage
+
+    (5 Needed)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d05cf26b91a8b4d1ebe43230cdbe44f7, type: 2}
   m_sharedMaterial: {fileID: -4588546906411795976, guid: d05cf26b91a8b4d1ebe43230cdbe44f7, type: 2}
