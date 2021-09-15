@@ -95,6 +95,12 @@ public class LevelManager : MonoBehaviour
         return Instance;
     }
 
+    public void ContinueGame()
+    {
+        LoadProgress();
+        GameState.GetInstance().gamePaused = false;
+    }
+
     public void ResetProgressAndLoad()
     {
         for (int i = 0; i < oxygenBubbles.Count; i++)

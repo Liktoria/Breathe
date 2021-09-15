@@ -10,7 +10,7 @@ public class MissionLog : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             this.gameObject.SetActive(false);
-            LevelManager.GetInstance().AddMissionLog(this.gameObject);
+            LevelManager.GetInstance().AddMissionLog(this.gameObject);            
             if (GameState.GetInstance().firstCollectMissionLog)
             {
                 PopUpManager.GetInstance().ShowMissionLogPopup(missionLogNumber);
@@ -18,6 +18,7 @@ public class MissionLog : MonoBehaviour
             else
             {
                 DialogueManager.GetInstance().StartDialogue("Mission Log " + missionLogNumber);
+                GameState.GetInstance().gamePaused = false;
             }
             //TODO: AUDIO beginning mission log sound
             //TODO: AUDIO Play VO for mission log with number missionLogNumber

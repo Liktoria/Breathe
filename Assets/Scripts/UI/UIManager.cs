@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour
         alpha = startValue;
         GameState.GetInstance().gamePaused = true;
         newMenu.SetActive(true);
-        foreach(Image fadeImage in newMenu.GetComponent<Menu>().fadeImages)
+        foreach (Image fadeImage in newMenu.GetComponent<Menu>().fadeImages)
         {
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
         }
@@ -121,7 +121,6 @@ public class UIManager : MonoBehaviour
         {
             fadeText.color = new Color(fadeText.color.r, fadeText.color.g, fadeText.color.b, 1);
         }
-
 
         while (time < duration)
         {
