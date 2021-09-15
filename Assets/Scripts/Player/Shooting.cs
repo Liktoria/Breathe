@@ -45,6 +45,7 @@ public class Shooting : MonoBehaviour
     private void Shoot()
     {
         Vector3 cursorScreenPosition = Input.mousePosition;
+        cursorScreenPosition.z = 10;
         Vector3 localCursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPosition);
         Vector2 localCursorPosition2D = new Vector2(localCursorPosition.x, localCursorPosition.y);
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
@@ -55,7 +56,7 @@ public class Shooting : MonoBehaviour
         {
             if(!characterRenderer.flipX)
             {
-                //TODO: AUDIO Play paper flip sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
             }
             characterRenderer.flipX = true;            
             instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffsetLeft, Quaternion.Euler(0, 0, angle));
@@ -64,12 +65,12 @@ public class Shooting : MonoBehaviour
         {
             if(characterRenderer.flipX)
             {
-                //TODO: AUDIO Play paper flip sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
             }
             characterRenderer.flipX = false;
-            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, angle));
+            instantiatedProjectile = GameObject.Instantiate(projectile, transform.position + shootingOffset, Quaternion.Euler(0, 0, -angle));
         }
-        //TODO: AUDIO Shooting sound
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Miles/Miles Gunshot", GetComponent<Transform>().position);
         Rigidbody2D rbProjectile = instantiatedProjectile.GetComponent<Rigidbody2D>();
         instantiatedProjectile.GetComponent<Projectile>().DegradeProjectile();
 

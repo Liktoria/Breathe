@@ -7,6 +7,7 @@ public class MilesPopup : MonoBehaviour
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject richmondTrigger;
     [SerializeField] private Sprite deadRichmondSprite;
+    [SerializeField] private Inventory inventory;
     private bool dialogueTriggered;
 
     private void Start()
@@ -16,6 +17,7 @@ public class MilesPopup : MonoBehaviour
     public void StartNextDialogue()
     {
         GameState.GetInstance().gamePaused = true;
+        inventory.AcquiredMiles();
         if (GameState.GetInstance().savedRichmond)
         {
             dialogueTriggered = true;
