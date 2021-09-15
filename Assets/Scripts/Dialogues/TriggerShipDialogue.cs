@@ -6,6 +6,8 @@ public class TriggerShipDialogue : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private CameraController cameraController;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private Credits creditsScript;
     private bool savedRichmond;
     private bool dialogueTriggered;
 
@@ -42,7 +44,10 @@ public class TriggerShipDialogue : MonoBehaviour
         if(dialogueTriggered)
         {
             dialogueTriggered = false;
-        }
+            GameState.GetInstance().gamePaused = true;
+            creditsScript.GetComponent<UIManager>().ShowMenu(mainMenu);
+            creditsScript.StartCredits();
+        }        
         //TODO: Open main menu, reset progress, change button to "play again"
     }
 

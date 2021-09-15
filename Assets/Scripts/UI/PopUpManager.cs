@@ -69,6 +69,7 @@ public class PopUpManager : MonoBehaviour
         GameState.GetInstance().gamePaused = false;
         orchid.SetActive(false);
         light.color = new Color(0.9811321f, 0.5590602f, 0.5590602f, 1);
+        GameState.GetInstance().gotOrchid = true;
         inventory.AcquiredOrchid();
         //make enemies aggressive
     }

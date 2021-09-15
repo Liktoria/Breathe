@@ -10153,6 +10153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5951366847848641069}
   cameraController: {fileID: 519420030}
+  mainMenu: {fileID: 1432713552}
+  creditsScript: {fileID: 1654250967}
 --- !u!61 &627602722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18292,7 +18294,7 @@ MonoBehaviour:
   orchidPopup: {fileID: 714685540}
   orchid: {fileID: 520955314}
   light: {fileID: 190880263}
-  newOrchidSprite: {fileID: 21300000, guid: d65a56540e228499182f428afea40fdd, type: 3}
+  newOrchidSprite: {fileID: 21300000, guid: d86b66d2e03b8e94fbfc4184e63e39cb, type: 3}
   oxygenState: {fileID: 5951366847848641072}
   inventory: {fileID: 570058715}
 --- !u!114 &1654250967
@@ -22412,7 +22414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5951366847848641069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 996.48, y: -4.76, z: 0}
+  m_LocalPosition: {x: 969.15, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5951366846765618136}
