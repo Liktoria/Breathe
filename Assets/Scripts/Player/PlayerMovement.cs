@@ -54,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
             MoveCharacter();
             Jump();
             AdjustFalling();
+            if(transform.position.y < -18)
+            {
+                LevelManager.GetInstance().currentPlayerHealth = 0;
+                GetComponent<PlayerHealth>().TakeHit();
+            }
         }
         else
         {
