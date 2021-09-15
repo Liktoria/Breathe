@@ -8368,8 +8368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a58c701d2da7294d9a87d580330da40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleBound: {x: 1055.5994, y: 32.38704}
-  offset: {x: 487.88123, y: 0.004501343}
+  scaleBound: {x: 1036.6958, y: 17.268187}
+  offset: {x: 487.5852, y: -1.4223223}
   maxXlimit: {x: 0, y: 0}
   maxYlimit: {x: 0, y: 0}
 --- !u!4 &476278022
@@ -8627,7 +8627,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9960785, g: 0.9960785, b: 0.7725491, a: 0}
+  m_BackGroundColor: {r: 0.03137255, g: 0.07058824, b: 0.1764706, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -18710,7 +18710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6231241bd800ae4f999150d252bc72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackImage: {fileID: 357294221}
+  blackMenu: {fileID: 357294219}
 --- !u!114 &1654250965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22199,7 +22199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5951366847848641069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 970.5, y: -8.5, z: 0}
+  m_LocalPosition: {x: 453.9, y: -3.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5951366846765618136}

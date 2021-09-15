@@ -22,7 +22,7 @@ public class TriggerRichmondDialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player" && !popUpTriggered)
         {
             popUpTriggered = true;
-            cameraController.DialogueTriggerReached(this.transform); //lerp camera
+            //cameraController.DialogueTriggerReached(this.transform); //lerp camera
             //Lerp player position            
             GameState.GetInstance().gamePaused = true;
             saveRichmondPopup.SetActive(true);

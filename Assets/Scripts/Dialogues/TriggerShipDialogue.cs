@@ -18,7 +18,7 @@ public class TriggerShipDialogue : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && GameState.GetInstance().hasMiles)
         {
-            cameraController.DialogueTriggerReached(this.transform);//lerp camera
+            //cameraController.DialogueTriggerReached(this.transform);//lerp camera
             //Lerp player position
             if (player.GetComponent<OxygenState>().extraOxygenContainers >= GameState.GetInstance().minExtraOxygenToSaveRichmond)
             {
