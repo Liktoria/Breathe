@@ -33,18 +33,19 @@ public class TriggerRichmondDialogue : MonoBehaviour
     {
         saveRichmondPopup.SetActive(false);
         GameState.GetInstance().gamePaused = true;
+        DialogueManager.GetInstance().lastDialogue = false;
         if (player.GetComponent<OxygenState>().extraOxygenContainers >= GameState.GetInstance().minExtraOxygenToSaveRichmond)
         {
+            dialogueTriggered = true;
             GameState.GetInstance().savedRichmond = true;
             DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V1 Richmond Lives - PT1");
             //TODO: AUDIO Start VO "Roanoke Finds Richmond - V1 Richmond Lives - PT1"
-            dialogueTriggered = true;
         }
         else
         {
+            dialogueTriggered = true;
             GameState.GetInstance().savedRichmond = false;
             DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V2 Richmond Dies - PT1");
-            dialogueTriggered = true;
             //TODO: AUDIO Start VO "Roanoke Finds Richmond - V2 Richmond Dies - PT1"
         }        
     }
@@ -53,8 +54,8 @@ public class TriggerRichmondDialogue : MonoBehaviour
     {
         if (dialogueTriggered)
         {
-            milesPopup.SetActive(true);
             GameState.GetInstance().gamePaused = true;
+            milesPopup.SetActive(true);            
             //TODO: AUDIO pop up sound (if exsiting)
             dialogueTriggered = false;
         }        

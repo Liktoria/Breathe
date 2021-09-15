@@ -18,6 +18,7 @@ public class MilesPopup : MonoBehaviour
     {
         GameState.GetInstance().gamePaused = true;
         inventory.AcquiredMiles();
+        DialogueManager.GetInstance().lastDialogue = true;
         if (GameState.GetInstance().savedRichmond)
         {
             dialogueTriggered = true;

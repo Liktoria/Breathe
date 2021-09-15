@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     private bool isDoneShowingLine = true;
     public delegate void DialogueEndedAction();
     public static event DialogueEndedAction OnDialogueEnded;
-
+    [System.NonSerialized] public bool lastDialogue = true;
 
     private bool IsDoneShowingLine
     {
@@ -106,6 +106,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(string dialogueName)
     {
+        GameState.GetInstance().gamePaused = true;
         Dialogue[] filteredDialogues = dialogues.Where(d => d.name == dialogueName).ToArray();
 
         if (filteredDialogues.Length > 0)
@@ -138,7 +139,10 @@ public class DialogueManager : MonoBehaviour
                 dialogueBox.SetActive(false);
                 characterIndex = 0;
                 IsDoneShowingLine = true;
-                GameState.GetInstance().gamePaused = false;
+                if(lastDialogue)
+                {
+                    GameState.GetInstance().gamePaused = false;
+                }                
                 OnDialogueEnded?.Invoke();
                 //Dialogue ended
             }
