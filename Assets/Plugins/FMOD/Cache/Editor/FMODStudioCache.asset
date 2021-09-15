@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637672199783819418
+  lastModified: 637672334350000000
   FileSizes:
   - Name: Desktop
-    Value: 192032
+    Value: 489696
   Exists: 1
 --- !u!114 &-7759700277517076941
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637672199783841170
+  lastModified: 637672334350000000
   FileSizes:
   - Name: Desktop
-    Value: 864
+    Value: 1246
   Exists: 1
 --- !u!114 &-6731524637955140399
 MonoBehaviour:
@@ -60,6 +60,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 191520
   Exists: 1
+--- !u!114 &-6691241772774717433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Low Air Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Low Air Emote
+  guid: 2b1b153a88afb547b000a179f2e3d4fa
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4720
 --- !u!114 &-6644201285606047648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +156,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
+--- !u!114 &-4785728927623901046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Eliminates Enemies Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Eliminates Enemies Emote
+  guid: e47da96b8b7c9048810e03008b849a55
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1800
 --- !u!114 &-4506184192516709805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +224,53 @@ MonoBehaviour:
   - Name: Desktop
     Value: 192032
   Exists: 1
+--- !u!114 &-1953544658724093079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Takes Damage Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Takes Damage Emote
+  guid: 5b1a81d5de1de842b105b4905a8be8bd
+  Banks:
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1600
+--- !u!114 &-938279207906068714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Oxygen Collection Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Oxygen Collection Emote
+  guid: 96c124c272e02c49ad96c4f9107be2ba
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2720
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,13 +290,68 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5841149998250095724}
   - {fileID: -4506184192516709805}
+  - {fileID: 67230616750101834}
+  - {fileID: -6691241772774717433}
+  - {fileID: 608517422408433823}
+  - {fileID: -938279207906068714}
+  - {fileID: 8658582967140541467}
+  - {fileID: -4785728927623901046}
+  - {fileID: -1953544658724093079}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7795128322336007441}
   StringsBanks:
   - {fileID: -7759700277517076941}
-  stringsBankWriteTime: 637672199783841170
+  stringsBankWriteTime: 637672334350000000
   cacheVersion: 8
+--- !u!114 &67230616750101834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Jump Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Jump Emote
+  guid: 2a0cc19ead73af44b4e77d7fe9a10b3d
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 215
+--- !u!114 &608517422408433823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Death Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Death Emote
+  guid: 598733acd8bc2d47910a38f91766f628
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2720
 --- !u!114 &1744109695578329123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,8 +495,32 @@ MonoBehaviour:
   Path: Build/Desktop/Breathe.bank
   Name: Breathe
   StudioPath: bank:/Breathe
-  lastModified: 637672199784168418
+  lastModified: 637672334350000000
   FileSizes:
   - Name: Desktop
-    Value: 191520
+    Value: 453376
   Exists: 1
+--- !u!114 &8658582967140541467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VO/Roanoke Barks/Landing Emote
+  m_EditorClassIdentifier: 
+  Path: event:/VO/Roanoke Barks/Landing Emote
+  guid: bf381f5b6fa04f48bc2d2c86ae249280
+  Banks:
+  - {fileID: 8091176669422890067}
+  - {fileID: -7795128322336007441}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 730
