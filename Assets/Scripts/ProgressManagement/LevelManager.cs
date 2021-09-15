@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] ProgressBar oxygenBar;
     [SerializeField] private int totalPlayerHealth;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private OxygenStorage oxygenStorage;
 
     private void Awake()
     {
@@ -73,8 +74,9 @@ public class LevelManager : MonoBehaviour
         currentPlayerHealth = totalPlayerHealth;
         oxygenBar.BarValue = 75;
         GameState.GetInstance().gamePaused = false;
-        player.GetComponent<OxygenState>().StartOxygenLoss();
+        //player.GetComponent<OxygenState>().StartOxygenLoss();
         unsavedOxygenContainers = 0;
+        oxygenStorage.UpdateNumber();
         //Update OxygenContainerUI
     }
 

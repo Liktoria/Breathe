@@ -6,22 +6,28 @@ public class CameraController : MonoBehaviour
 {
     public float moveSpeed;
     public Transform followTarget;
-	private Vector3 targetPos;
+    [SerializeField] CameraBounds2D bounds;
+    private Vector3 targetPos;
     private float duration = 1.5f;
     private Vector3 originalPosition;
     private Transform targetPosition;
     private bool isLerping = false;
+    private Vector2 maxXPositions, maxYPositions;
 
     private void Start()
     {
         targetPosition = transform;
+        bounds.Initialize(GetComponent<Camera>());
+        maxXPositions = bounds.maxXlimit;
+        maxYPositions = bounds.maxYlimit;
     }
 
     void Update()
 	{
 		if (followTarget != null && !isLerping)
 		{
-			targetPos = new Vector3(followTarget.position.x, followTarget.position.y, transform.position.z);
+            Vector3 currentPosition = transform.position;
+            targetPos = new Vector3(Mathf.Clamp(followTarget.position.x, maxXPositions.x, maxXPositions.y), Mathf.Clamp(followTarget.position.y, maxYPositions.x, maxYPositions.y), currentPosition.z);
 			Vector3 velocity = (targetPos - transform.position) * moveSpeed;
 			transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
 		}
