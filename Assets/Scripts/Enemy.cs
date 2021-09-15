@@ -6,16 +6,21 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private AIPath path;
-    private int health = 4;
+    [SerializeField] private SpriteRenderer minusOne;
+    private int health = 5;
     private bool isAttacking;
-    
+
+    private void Start()
+    {
+        GetComponent<Collider2D>().enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(GameState.GetInstance().gotOrchid && !isAttacking)
         {
-            isAttacking = true;
-            path.canSearch = true;
+            ActivateEnemy();
         }
     }
 
@@ -24,10 +29,31 @@ public class Enemy : MonoBehaviour
         if(health > 0)
         {
             health--;
+            ShowText();
         }
         else
         {
-            Destroy(path.gameObject);
+            path.gameObject.SetActive(false);
+            ShowText();
         }
+    }
+
+    public void ActivateEnemy()
+    {
+        isAttacking = true;
+        GetComponent<Collider2D>().enabled = true;
+        path.canSearch = true;
+    }
+
+    public void ShowText()
+    {
+        minusOne.color = new Color(minusOne.color.r, minusOne.color.g, minusOne.color.b, 1);
+        StartCoroutine(WaitToHide(minusOne));
+    }
+
+    IEnumerator WaitToHide(SpriteRenderer minusOne)
+    {
+        yield return new WaitForSeconds(1.5f);
+        minusOne.color = new Color(minusOne.color.r, minusOne.color.g, minusOne.color.b, 0);
     }
 }
