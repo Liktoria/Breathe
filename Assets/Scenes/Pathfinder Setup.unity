@@ -527,12 +527,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25010464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.081, y: -7.48, z: 0}
+  m_LocalPosition: {x: -0.68, y: -6.71, z: 0}
   m_LocalScale: {x: 0.5630465, y: 0.5630465, z: 0}
   m_Children:
   - {fileID: 1543743617}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &43549703
 PrefabInstance:
@@ -10480,7 +10480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAAIexxV5RVSwIAAPMEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjktKE3lpDSA8kmZBOLr4s1hprkCWPPgIkw3/vSraxS6cnxHtvd9/uSv5kQtkac6fN0gi+0hzZ9xELZ/Zl1JMPeICtVmvxgZ3mTXBXBhFEzQs4oQmfhDCrK3RG5D/UVgZxQqBXotCmWvAtpto6S3AB0iJRRrsQrQj6HLED/YxnIeRIp+vbcPqg0ywZneiYo3Joemkn7GSNyqtcQlUjD5Z78bRT3zQyRc20imA811IK2zph7ljHTlOorac+SMAFUGex/OTqhoASxbZ0wecw/KkoLLrWlIHjXBgaUZOX/dTN3Cqwu8bZO0iPZ+tNytU/7HgS6cLo6qGrOklCBVeKfPcCxxysG4x1CM8HxuN49iB3sJH4VqJ61EujveJEOuNDqLd4Pe//nhtLS8x3Pd5YvQB9/f/lhB5OsfdDKkW1CdTV1wZYSx3nHVePhjbziwzHi2HbFIQGF78tvsJ2eINa4l4Y64hqu1TB3kZ7E6RsEWcWuvEu1UZhhFvTNSqQ7vhMadzlAi+4QdkL5h7CW2mLt1z3BC5CItzrk+SCetb787JsqfcrtOWTd1Io7E0H4pHmlGqlmvs1nEkXtvamgHwQtvWC/321WDL7drPZzIrJ3d00T4q7Mcymye00mSQAwIll8e4JRX2CfG6MtuOhrak+uaJ71n1CRksDdbzr3MB+KT4qPTQoVKHXuUFUT02Ks3M0VIWeJV9wQRNao3NCxYWzz4xJne+QZ+eaWWx1cXAGsj5Lxmrxrl1AMpbGj0bGTuz0B1BLAwQUAAAICAAAACHsfvjffGwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0koGlmXFSkmWaoYWFabJBmoVuoqWpgbmpgaFBYmJiClBWKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAAAAIexxV5RVSwIAAPMEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIex++N98bAAAAHgAAAAJACQAAAAAAAAAAAAAAJgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATwMAAAAA
+    dataString: UEsDBBQAAAgIAAAAIew+sIsXSwIAAPIEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjktKE3lpDSA8kmZBOLr4s1hprkCWPPgIkw3/vSraxS6cnxHtvV28/5E8mlK0xd9osjeArzZF9H7FwZl9GPfmAB9hqtRYf2GneBHdlEEHUvIATmvBJCLO6QmdE/kNtZRAnBHolCm2qBd9iqq2zBBcgLRJltAvRiqDPETvQz3gWQo50ur4Npw86zZLRiY45Koeml3bCTtaovMolVDXyYLkX35zTTqNMUTGtIhjPtZTCtk6YO9ax0hRq66kOEnABVFm8fnJ1Q0CJYlu6kHAY/lQUFl1rysBxLgy1qMnLfuqmbxXYXePsHaTHs/Um5eofdjyJdGF09dDdOknCDa4U+e4FjjlYN2jrEJ4PjMf27EHuYCPxrUT1qJdGe8WJdMaHUG/xet7/PReWlpjveryxegH6+v/DCTWcYu2HVIpqE6irrw2wljr2O44eDU3mFxmOi2HbFIQGF78tvsJ2uEEtcS+MdUS1Vapgb6O9CVK2iD0L1XiXaqMwwq3pGhVId3ymNO5ygBfc4NoL5h7CW2kvb7nuCVyERLjXJ8kF9az352HZUu9XaMsn76RQ2JsOxCP1KdVKNfs17EkXtvamgHwQtvWC/71aLJl9u9lsZsXk7m6aJ8XdGGbT5HaaTBIA4MSyuHtCUZ0gnxujbXtoaqpPrmjPuk/IaGmgjrvODeyX4qPSg5YLVeh1bhDVU5PhbBwNXUKvki+4oAat0Tmh4rzZZ8akznfIs3OiLFa6ODgDWZ8lY7V41y4gGUvjNyNjJ3b6A1BLAwQUAAAICAAAACHsfvjffGwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0koGlmXFSkmWaoYWFabJBmoVuoqWpgbmpgaFBYmJiClBWKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAAAAIew+sIsXSwIAAPIEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIex++N98bAAAAHgAAAAJACQAAAAAAAAAAAAAAJgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -10529,11 +10529,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175896427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189697411
 GameObject:
@@ -12242,7 +12242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543743616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.32, y: -0.1, z: 0}
+  m_LocalPosition: {x: 1.7, y: -0.1, z: 0}
   m_LocalScale: {x: 0.70908135, y: 0.70908135, z: 0}
   m_Children: []
   m_Father: {fileID: 25010469}
@@ -12470,6 +12470,7 @@ MonoBehaviour:
   oxygenBar: {fileID: 2074618857}
   totalPlayerHealth: 5
   inventory: {fileID: 570058715}
+  oxygenStorage: {fileID: 0}
 --- !u!4 &1654250962
 Transform:
   m_ObjectHideFlags: 0
@@ -12533,7 +12534,6 @@ MonoBehaviour:
   fadeDuration: 1.5
   pauseMenu: {fileID: 766431517}
   inventory: {fileID: 570058715}
-  oxygenState: {fileID: 0}
 --- !u!1 &1673429908
 GameObject:
   m_ObjectHideFlags: 0
@@ -14618,6 +14618,7 @@ MonoBehaviour:
   reductionAmount: 1
   collectibleOxygenAmount: 20
   oxygenBar: {fileID: 2074618857}
+  oxygenStorage: {fileID: 0}
 --- !u!114 &5951366847848641073
 MonoBehaviour:
   m_ObjectHideFlags: 0
