@@ -48,6 +48,14 @@ public class Enemy : MonoBehaviour
         path.canSearch = true;
     }
 
+    public void DeactivateEnemy()
+    {
+        isAttacking = false;
+        GetComponent<Collider2D>().enabled = false;
+        path.canSearch = false;
+        ResetEnemy();
+    }
+
     public void ShowText()
     {
         minusOne.color = new Color(minusOne.color.r, minusOne.color.g, minusOne.color.b, 1);

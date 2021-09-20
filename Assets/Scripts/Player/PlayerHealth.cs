@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy" && GameState.GetInstance().hasMiles)
         {
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         {
             LevelManager.GetInstance().currentPlayerHealth--;
             ShowText();
-
+            Debug.Log("Got hit! " + LevelManager.GetInstance().currentPlayerHealth + "health left");
         }
         else
         {

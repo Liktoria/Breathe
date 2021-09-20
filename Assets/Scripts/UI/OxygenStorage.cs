@@ -13,9 +13,12 @@ public class OxygenStorage : MonoBehaviour
     }
     public void IncreaseNumber()
     {
-        currentOxygenExtras++;
-        numberDisplayed.text = currentOxygenExtras.ToString();
-        LevelManager.GetInstance().unsavedOxygenContainers++;
+        if (!GameState.GetInstance().gotOrchid)
+        {
+            currentOxygenExtras++;
+            numberDisplayed.text = currentOxygenExtras.ToString();
+            LevelManager.GetInstance().unsavedOxygenContainers++;
+        }
     }
 
     public void UpdateNumber()

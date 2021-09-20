@@ -22,7 +22,7 @@ public class TriggerShipDialogue : MonoBehaviour
         {
             //cameraController.DialogueTriggerReached(this.transform);//lerp camera
             //Lerp player position
-            if (player.GetComponent<OxygenState>().extraOxygenContainers >= GameState.GetInstance().minExtraOxygenToSaveRichmond)
+            if (GameState.GetInstance().savedRichmond)
             {
                 DialogueManager.GetInstance().StartDialogue("Final Scene - V1 Richmond Alive");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/Final Scene V1", GetComponent<Transform>().position);

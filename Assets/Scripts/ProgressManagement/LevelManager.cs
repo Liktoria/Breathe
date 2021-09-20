@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -18,6 +21,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float oxygenReloadValue;
     [SerializeField] private List<GameObject> allMissionLogs = new List<GameObject>();
     [SerializeField] private List<GameObject> allEnemies = new List<GameObject>();
+    [SerializeField] private Menu blackMenu;
 
     private void Awake()
     {
@@ -109,6 +113,7 @@ public class LevelManager : MonoBehaviour
 
     public void ResetProgressAndLoad()
     {
+        //reset oxygen bubbles, mission logs & enemies
         for (int i = 0; i < oxygenBubbles.Count; i++)
         {
             oxygenBubbles[i].SetActive(true);
@@ -117,6 +122,12 @@ public class LevelManager : MonoBehaviour
         {
             allMissionLogs[i].SetActive(true);
         }
+        for(int i = 0; i < allEnemies.Count; i++)
+        {
+            allEnemies[i].GetComponentInChildren<Enemy>().DeactivateEnemy();
+        }
+
+        //Reset game state
         GameState.GetInstance().savedMissionLogs.Clear();
         GameState.GetInstance().hasMiles = false;
         GameState.GetInstance().savedOxygenContainers = 0;
@@ -125,10 +136,28 @@ public class LevelManager : MonoBehaviour
         GameState.GetInstance().firstCollectOxygen = true;
         GameState.GetInstance().lastCheckpoint = 0;
         GameState.GetInstance().savedRichmond = false;
+
+        //Reset inventory
         inventory.InitInventory();
+
+        //Reset oxygen values
         oxygenState.ResetOxygenToValue(100);
         oxygenState.SetFirstOxygenValues();
+
+        //Reset player
         currentPlayerHealth = totalPlayerHealth;
+        player.transform.position = GameState.GetInstance().checkpointPositions[GameState.GetInstance().lastCheckpoint];
+
+        //Reset intro menu
+        blackMenu.gameObject.SetActive(true);
+        foreach (Image fadeImage in blackMenu.fadeImages)
+        {
+            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+        }
+        foreach (TMP_Text fadeText in blackMenu.fadeTexts)
+        {
+            fadeText.color = new Color(fadeText.color.r, fadeText.color.g, fadeText.color.b, 1);
+        }
     }
 
     public void StartWayBack()
@@ -136,9 +165,6 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < oxygenBubbles.Count; i++)
         {
             oxygenBubbles[i].SetActive(false);
-        } //TODO: replace with accurate value
-        //TODO: make creatures aggressive -> change their path pattern and make them deal damage to the player
-        //TODO: change oxygen depleting speed
-        //TODO: make Richmond follow the player
+        } 
     }
 }

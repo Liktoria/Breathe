@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6779951377673667682}
   - component: {fileID: 8172310581605374675}
   - component: {fileID: 4467352789072634296}
+  - component: {fileID: 2953027559081785853}
   m_Layer: 5
   m_Name: OxygenStorage_TornPaper
   m_TagString: Untagged
@@ -87,7 +88,7 @@ Animator:
   m_GameObject: {fileID: 4814407749315060568}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c99fe5c54a62343668655b9de45c05d9, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -96,6 +97,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2953027559081785853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4814407749315060568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b9f565d0896234b9be36e40aa215cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberDisplayed: {fileID: 7447088143877987761}
 --- !u!1 &7447088143205417597
 GameObject:
   m_ObjectHideFlags: 0

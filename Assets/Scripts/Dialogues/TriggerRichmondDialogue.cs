@@ -8,6 +8,7 @@ public class TriggerRichmondDialogue : MonoBehaviour
     [SerializeField] private GameObject milesPopup;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject saveRichmondPopup;
+    [SerializeField] private OxygenStorage oxygenStorage;
     private bool savedRichmond;
     private bool dialogueTriggered;
     private bool popUpTriggered;
@@ -38,6 +39,10 @@ public class TriggerRichmondDialogue : MonoBehaviour
         {
             dialogueTriggered = true;
             GameState.GetInstance().savedRichmond = true;
+            oxygenStorage.currentOxygenExtras = oxygenStorage.currentOxygenExtras - 5;
+            LevelManager.GetInstance().unsavedOxygenContainers = 0;
+            GameState.GetInstance().savedOxygenContainers = oxygenStorage.currentOxygenExtras;
+            oxygenStorage.UpdateNumber();
             DialogueManager.GetInstance().StartDialogue("Roanoke Finds Richmond - V1 Richmond Lives - PT1");
             FMODUnity.RuntimeManager.PlayOneShot("event:/VO/Scenes/R finds R V1 pt 1", GetComponent<Transform>().position);
         }
