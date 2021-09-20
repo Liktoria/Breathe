@@ -148,7 +148,7 @@ public class LevelManager : MonoBehaviour
         currentPlayerHealth = totalPlayerHealth;
         player.transform.position = GameState.GetInstance().checkpointPositions[GameState.GetInstance().lastCheckpoint];
 
-        //Reset intro menu
+        //Reset intro menu        
         blackMenu.gameObject.SetActive(true);
         foreach (Image fadeImage in blackMenu.fadeImages)
         {
