@@ -67,6 +67,7 @@ public class LevelManager : MonoBehaviour
         for(int i = 0; i < allEnemies.Count; i++)
         {
             allEnemies[i].SetActive(true);
+            allEnemies[i].GetComponentInChildren<Enemy>().ResetEnemy();
         }
 
         unsavedMissionLogs.Clear();

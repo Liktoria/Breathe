@@ -7,12 +7,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private AIPath path;
     [SerializeField] private SpriteRenderer minusOne;
-    private int health = 5;
+    private int health = 3;
     private bool isAttacking;
+    private Vector3 initialPosition;
 
     private void Start()
     {
         GetComponent<Collider2D>().enabled = false;
+        
+        initialPosition = transform.parent.position;
     }
 
     // Update is called once per frame
@@ -55,5 +58,11 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         minusOne.color = new Color(minusOne.color.r, minusOne.color.g, minusOne.color.b, 0);
+    }
+
+    public void ResetEnemy()
+    {
+            health = 3;
+            transform.parent.position = initialPosition;
     }
 }
