@@ -187,7 +187,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Mission Log Acquired. Richmond\u2019s logs give insight into A.E.R.O.,
-    Ceres, and your mission. \nClick the dialogue box to skip text. \n"
+    Ceres, and your mission. \nClick the dialogue box to hide text. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d05cf26b91a8b4d1ebe43230cdbe44f7, type: 2}
   m_sharedMaterial: {fileID: -4588546906411795976, guid: d05cf26b91a8b4d1ebe43230cdbe44f7, type: 2}
