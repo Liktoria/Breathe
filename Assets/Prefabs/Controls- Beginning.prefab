@@ -535,7 +535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -59, y: -198.0871}
+  m_AnchoredPosition: {x: -61, y: -198.0871}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6676545917172665682
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click to skip dialogue
+  m_text: Click to progress dialogue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d05cf26b91a8b4d1ebe43230cdbe44f7, type: 2}
   m_sharedMaterial: {fileID: -4588546906411795976, guid: d05cf26b91a8b4d1ebe43230cdbe44f7, type: 2}
@@ -2195,7 +2195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 256.00024, y: -199.99994}
+  m_AnchoredPosition: {x: 223, y: -199.99994}
   m_SizeDelta: {x: 112, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4785092883211375609
