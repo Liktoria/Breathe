@@ -5,32 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //[SerializeField]
-    //private Animator animator;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravityY;
     [SerializeField] private Transform isGroundedChecker;
     [SerializeField] private float groundRadius;
     [SerializeField] private LayerMask groundLayer;
-    //[SerializeField]
-    //private LayerMask stickyLayer;
     [SerializeField] private float rememberGroundedFor;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float lowJumpMultiplier = 2f;
     [SerializeField] private int defaultJumpCount = 1;
     [SerializeField] private Sprite walkingSprite;
     [SerializeField] private Sprite standingSprite;
-    //[SerializeField] private CameraController cameraController;
-    //[SerializeField] private AudioClip jumpingSound;
-    //[SerializeField] private AudioClip walkingSound;
-    //[SerializeField] private AudioClip fallingSound;
-    //[SerializeField] private AudioClip impactSound;
     private bool isFalling = false;
     private Rigidbody2D rb;
     private bool isGrounded = true;
-    private bool onWall = false;
-    //private bool onStickyWall = false;
     private float lastTimeGrounded;
     private int jumpCounter;
     private bool jumping = false;
@@ -47,14 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         if (!GameState.GetInstance().gamePaused)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             MoveCharacter();
             Jump();
             AdjustFalling();
-            if(transform.position.y < -18)
+            if (transform.position.y < -18)
             {
                 LevelManager.GetInstance().currentPlayerHealth = 0;
                 GetComponent<PlayerHealth>().TakeHit();
@@ -64,59 +53,49 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        //checkOnWall();
     }
 
     private void MoveCharacter()
     {
-        //left and right -> x-axis
         float x = Input.GetAxisRaw("Horizontal");
         float moveBy = x * movementSpeed;
-        if (!onWall || (onWall && IsGrounded()))
+        if (!GetComponent<Shooting>().isShooting)
         {
-            if (!GetComponent<Shooting>().isShooting)
+            if (Input.GetAxis("Horizontal") > 0)
             {
-                if (Input.GetAxis("Horizontal") > 0)
+                if (characterRenderer.sprite != walkingSprite)
                 {
-                    if(characterRenderer.sprite != walkingSprite)
-                    {
-                        characterRenderer.sprite = walkingSprite;
-                    }
-                    if(characterRenderer.flipX)
-                    {
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
-                    }
-                    characterRenderer.flipX = false;
-                    walkingDirection = 1;
-                    //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
+                    characterRenderer.sprite = walkingSprite;
                 }
-                else if (Input.GetAxis("Horizontal") < 0)
+                if (characterRenderer.flipX)
                 {
-                    if (characterRenderer.sprite != walkingSprite)
-                    {
-                        characterRenderer.sprite = walkingSprite;
-                    }                    
-                    if(!characterRenderer.flipX)
-                    {
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
-                    }
-                    characterRenderer.flipX = true;
-                    walkingDirection = -1;
-                    //TODO: AUDIO: if(sound is not currently playing) -> play walking sound
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Footsteps", GetComponent<Transform>().position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
                 }
-                else
+                characterRenderer.flipX = false;
+                walkingDirection = 1;
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                if (characterRenderer.sprite != walkingSprite)
                 {
-                    if(characterRenderer.sprite != standingSprite)
+                    characterRenderer.sprite = walkingSprite;
+                }
+                if (!characterRenderer.flipX)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Turn", GetComponent<Transform>().position);
+                }
+                characterRenderer.flipX = true;
+                walkingDirection = -1;
+            }
+            else
+            {
+                if (characterRenderer.sprite != standingSprite)
+                {
+                    characterRenderer.sprite = standingSprite;
+                    if (walkingDirection < 0)
                     {
-                        characterRenderer.sprite = standingSprite;
-                        if (walkingDirection < 0)
-                        {
-                            characterRenderer.flipX = true;
-                        }
+                        characterRenderer.flipX = true;
                     }
-                    //TODO: AUDIO: stop walking sound (character is idling)
                 }
             }
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
@@ -137,21 +116,6 @@ public class PlayerMovement : MonoBehaviour
                 jumpCounter--;
             }
         }
-    }
-    private bool IsGrounded()
-    {
-        Vector2 position = transform.position;
-        Vector2 direction = Vector2.down;
-        float distance = 1.0f;
-
-        Debug.DrawRay(position, direction, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-
-        return false;
     }
 
     private void checkIfGrounded()
@@ -183,9 +147,9 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
-            if (!isFalling && !IsGrounded())
+            checkIfGrounded();
+            if (!isFalling && !isGrounded)
             {
-                //TODO: AUDIO (OPTIONAL!!!) Sound for falling midair
                 isFalling = true;
             }
         }
