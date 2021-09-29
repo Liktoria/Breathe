@@ -106,8 +106,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            checkIfGrounded();
-            if (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor || jumpCounter > 0)
+            
+            if (CheckIfGrounded() || Time.time - lastTimeGrounded <= rememberGroundedFor || jumpCounter > 0)
             {
                 jumping = true;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Character/Jump", GetComponent<Transform>().position);
@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void checkIfGrounded()
+    private bool CheckIfGrounded()
     {
         Collider2D collider = Physics2D.OverlapCircle(isGroundedChecker.position, groundRadius, groundLayer);
 
@@ -140,15 +140,15 @@ public class PlayerMovement : MonoBehaviour
             }
             isGrounded = false;
         }
+        return isGrounded;
     }
 
     void AdjustFalling()
     {
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
-            checkIfGrounded();
-            if (!isFalling && !isGrounded)
+            rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;            
+            if (!isFalling && !CheckIfGrounded())
             {
                 isFalling = true;
             }
